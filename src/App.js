@@ -1,24 +1,49 @@
-import logo from './logo.svg';
+
+import React from 'react';
 import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HRM from './Pages/HRM';
+import CRM from './Pages/crm/CRM';
+import Dashboard from './Pages/dashbord';
+import Navbar from './Components/navbar';
+import Sidebar from './Components/sidebar/sidebar';
+import List from './Pages/Products/List/List'
+import Single from './Pages/Products/Single/Single'
+import Upload from './Pages/Products/Upload/Upload'
+import Login from './Pages/Login/Login'
+import SignUp from './Pages/SignUp/SignUp';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className='container'> <BrowserRouter>
+      <Navbar />
+      <div className='body-container'>
+        <div className='sidebar'> <Sidebar /></div>
+
+        <div className="body">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="hrm" element={<HRM />} />
+            <Route path="crm" element={<CRM />} />
+            <Route path="login" element={<Login/>} />
+            <Route path="signup" element={<SignUp />} />
+            <Route path="products">
+            <Route index element={<List/>} />
+            <Route path=":products" element={<Single/>}/>
+            <Route path="upload" element={<Upload/>} />
+            </Route>
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
     </div>
+    </>
+
+
+
+
+
   );
 }
 

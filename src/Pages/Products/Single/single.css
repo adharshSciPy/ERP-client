@@ -1,0 +1,140 @@
+.product-item1{
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    height: auto;
+    padding: 20px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    border-radius: 10px;
+}
+
+.product-data{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.product-image{
+    flex: 1;
+
+}
+
+.product-image img{
+    height: 55vh;
+    width: 60%;
+}
+
+.product-image .image-selector{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+    width: 70%;
+    overflow: hidden;
+}
+
+.image-cards{
+    height: 4.3rem;
+    width: 4rem;
+    border: 1px solid rgb(95, 93, 93);
+    padding: .2rem;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.image-cards:hover{
+    border:1px solid blue;
+}
+
+.image-cards img{
+    height: 3.7rem;
+    width: 3.3rem;
+}
+
+.product-details{
+    flex: 1;
+}
+
+.product-details p:nth-child(1){
+    font-size: 27px;
+    width: 60%;
+    padding-bottom: 1rem;
+    border-bottom: 0.1px solid rgb(232, 229, 229);
+    margin-bottom: .8rem;
+}
+
+.product-details p span:nth-child(1){
+    color: red;
+    font-size: 26px;
+    margin-right: 1rem;
+}
+
+.product-details p:nth-child(2){
+    font-size: 27px;
+}
+
+.product-details p:nth-child(3){
+    font-size: 15px;
+    color: rgb(131, 127, 127);
+}
+
+
+.product-details p:nth-child(3) span{
+    text-decoration: line-through;
+    color: rgb(131, 127, 127);
+    font-size: 16px;
+}
+
+.product-details p:nth-child(4){
+    padding-bottom: 1rem ;
+    border-bottom: 0.1px solid rgb(232, 229, 229);
+}
+
+.product-details p:nth-child(5){
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: .3rem ;
+}
+
+.product-details p:nth-child(6){
+    font-size: 16px;
+    color: rgb(130, 126, 126);
+    margin-top: .4rem;
+}
+
+
+@media screen and (max-width: 490px) {
+    .product-data{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .product-image{
+        padding: 0;
+    }
+
+    .product-image img{
+        height: 40vh;
+        width: 100%;
+    }
+
+    .product-image .image-selector{
+        width: 100%;
+        height: 15vh;
+    }
+
+    .product-image .image-selector .image-cards{
+        overflow: hidden;
+        padding: .2rem;
+    }
+
+    .product-image .image-selector .image-cards img{
+        height: 10vh;
+        width: 80%;
+    }
+}

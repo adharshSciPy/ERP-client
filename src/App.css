@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+  background-color:#F0F4F7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.body-container{
   display: flex;
-  flex-direction: column;
+  
+}
+.sidebar{
+  margin-top: 10vh;
+  width: 15vw;
+  height: 90vh;
+  
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.body{
+  margin-top: 10vh;
+  width: 100vw;
+}
+
+/* styling for forms */
+ input, textarea, select {
+  margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 25px;
+    padding: 4px 16px;
+    min-height: 25px;
+    border: unset;
+    border-radius: 4px;
+    outline-color: rgb(84 105 212 / 0.5);
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+
+
+input::placeholder{
+  font-size: 14px;
+}
+
+label {
+  /* padding: 2px 12px 2px 0; */
+  display: inline-block;
+  font-weight: 500;
+  margin-bottom: .3rem;
+}
+
+input[type=submit] {
+  color: #ffff;
+  width: 5rem;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #5861FD;
+  border: none;
+  float: right;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.row{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.col{
+  flex: 1;
 }

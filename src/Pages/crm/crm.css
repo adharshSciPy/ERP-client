@@ -1,0 +1,120 @@
+ .crm-item1{
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  height: auto;
+  padding: 20px;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  border-radius: 10px;
+ }
+
+ .crm-header{
+  height: 3vh;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+
+.crm-header button{
+  color: #ffff;
+  height: 2.5rem;
+  width: 5rem;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #5861FD;
+}
+
+
+table {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: 1em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+table td {
+  font-size: .9em;
+}
+
+@media screen and (max-width: 800px) {
+  table th{
+      font-size: .8em;
+  }
+
+  table td{
+      font-size: .7;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+
+  table th{
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .6em;
+    text-align: center;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .7rem;
+    text-align: center;
+  }
+  
+  table td::before {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}

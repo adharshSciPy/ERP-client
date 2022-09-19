@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 function Sidebar() {
     return (
         <>
-
         <div className="container">
             <Link to = '/'>
             <button>dashboard </button>

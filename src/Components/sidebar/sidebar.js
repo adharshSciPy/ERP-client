@@ -20,6 +20,9 @@ function Sidebar() {
           <Link to="products">
             <button>Products</button>
           </Link>
+          <Link to = '/table'>
+          <button>Tables</button>
+          </Link> 
           <Link to = '/hrm'>
           <button>HRM</button>
           </Link> 

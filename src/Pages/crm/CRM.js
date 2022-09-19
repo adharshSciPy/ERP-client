@@ -2,12 +2,26 @@ import React from 'react';
 import './crm.css';
 import { tableData } from '../../Dummy datas/datas'
 import { useState } from 'react';
+import TablePagination from '@mui/material/TablePagination';
 function CRM() {
 
   const [name, setName] = useState('')
   const [age, setAge] = useState('')
   const [gender, setGender] = useState('')
   const [designation, setDesignation] = useState('')
+
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -23,6 +37,7 @@ function CRM() {
             <h1>CRM</h1>
             <a href="#demo-modal"><button type="submit" className='crm-button'>Add User</button></a>
           </div> 
+
 
            {/* modal */}
         <div className="crm-modal">
@@ -102,7 +117,9 @@ function CRM() {
             </thead>
         <tbody>
           {
-            tableData.map((value) => {
+            tableData
+            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            .map((value) => {
               return (
                 <tr>
                   <td>{value.id}</td>
@@ -116,9 +133,20 @@ function CRM() {
           }
         </tbody>
       </table>
+      <div style={{width: '70%'}}> 
+      <TablePagination
+        sx={{ width: '100%', overflow: 'hidden' }}
+        rowsPerPageOptions={[5, 10, 25, 50, 100]}
+        component="div"
+        count={tableData.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+        />
       </div>
-
-        </div>
+      </div>
+      </div>
       </div>
     </>
     

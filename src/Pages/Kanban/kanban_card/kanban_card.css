@@ -1,0 +1,17 @@
+.card {
+    padding: 15px;
+    background-color: #ffff;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}

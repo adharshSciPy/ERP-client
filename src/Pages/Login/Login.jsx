@@ -1,7 +1,15 @@
 import React from 'react'
+import {useState} from 'react'
 import './login.css'
 
 function Login() {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const handleSubmit = () => {
+        console.log(email, password)
+    }
   return (
     <>
         <div className="login-root">
@@ -17,7 +25,7 @@ function Login() {
                     <form id="stripe-login">
                         <div className="field">
                         <label for="email">Email</label>
-                        <input type="email" name="email" />
+                        <input type="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
                         </div>
                         <div className="field padding-bottom--24">
                         <div className="grid--50-50">
@@ -26,10 +34,10 @@ function Login() {
                             <a href='#'>Forgot your password?</a>
                             </div>
                         </div>
-                        <input type="password" name="password" />
+                        <input type="password" name="password" value={password} onChange={(e)=>setPassword(e.target.value)} />
                         </div>
                         <div className="field padding-bottom--24 padding-top--48 ">
-                        <input type="submit" name="submit" value="Continue" />
+                        <input type="submit" name="submit" value="Continue" onClick={handleSubmit} />
                         </div>
                         <div className="field">
                         <div className="ssolink">Don't have an account? <a href='#'>Sign up</a></div>

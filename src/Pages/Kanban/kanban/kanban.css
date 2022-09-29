@@ -1,0 +1,85 @@
+.kanban {
+    display: flex;
+    align-items: flex-start;
+}
+
+.kanban-header{
+    height: 3vh;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content:start;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.kanban__section {
+        width: 400px;
+        background-color: #f0f4f7;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 10px;
+        min-width: 250px;
+}
+
+.kanban__section__title{
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 10px 0 20px;
+    border-bottom: .1px solid rgb(219, 216, 216);
+    padding-bottom: .3em;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.kanban__section__title .add__todo{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5861FD;
+    color: #ffff;
+    border: none;
+}
+
+.kanban-item1{
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    height: auto;
+    min-height: 80vh;
+    padding: 10px 20px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    border-radius: 10px;
+    min-width: 100%;
+    overflow: scroll;
+}
+
+.add_todo{
+    padding: 1rem;
+    width: 15rem;
+}
+
+.add_todo_header h3{
+    margin-bottom: .7rem;
+}
+
+.add_todo_body input{
+    width: 85%;
+
+}
+
+.add_todo_btn input[type=submit]{
+    color: #ffff;
+    width: 5rem;
+    height: 2rem;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #5861FD;
+    border: none;
+}

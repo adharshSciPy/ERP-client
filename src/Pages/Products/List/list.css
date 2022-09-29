@@ -28,7 +28,10 @@
     font-size: 15px;
     font-weight: 600;
     background-color: #5861FD;
-    padding: 0 .4rem;}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .list-container{
     display: grid;

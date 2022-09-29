@@ -14,7 +14,7 @@
 .sidebar{
   margin-top: 10vh;
   width: 15vw;
-  height: 90vh;
+  height: auto;
   position: fixed;
   
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -22,17 +22,17 @@
 
 .body{
   margin-top: 10vh;
-  width: 100vw;
+  width: 100%;
   margin-left: 15vw;
 }
 
 /* styling for forms */
- input, textarea, select {
+ input, textarea, select{
   margin-bottom: 20px;
     font-size: 14px;
-    line-height: 25px;
+    line-height: 20px;
     padding: 4px 16px;
-    min-height: 25px;
+    min-height: 1.2rem;
     border: unset;
     border-radius: 4px;
     outline-color: rgb(84 105 212 / 0.5);
@@ -74,8 +74,15 @@ input[type=submit] {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .col{
   flex: 1;
+}
+
+@media (max-width: 800px) {
+  .col {
+    flex: 100%;
+  }
 }

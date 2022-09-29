@@ -6,7 +6,7 @@ function Navbar() {
     return (
             <header className='header'>
 
-                <h1> Navbar</h1>
+                <h1>Navbar</h1>
 
             </header>
         )

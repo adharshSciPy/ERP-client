@@ -1,6 +1,6 @@
 .dashboardcontainer {
   width: calc(83vw - 40px);
-  height: calc(90vh - 40px);  
+  min-height: calc(90vh - 40px);  
   padding: 20px;
 }
 

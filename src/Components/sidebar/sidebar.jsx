@@ -8,6 +8,7 @@ import BadgeIcon from '@mui/icons-material/Badge';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import ReceiptIcon from '@mui/icons-material/Receipt';
+import Person from '@mui/icons-material/Person';
 
 
 function Sidebar() {
@@ -23,7 +24,11 @@ function Sidebar() {
         </Link>
 
         <Link to='/hrm'>
-          <button><BadgeIcon style={{margin: "1rem"}}/>HRM</button>
+          <button><Person style={{margin: "1rem"}}/>HRM</button>
+        </Link>
+
+        <Link to='/employee'>
+          <button><BadgeIcon style={{margin: "1rem"}}/>Employee</button>
         </Link>
 
         <Link to="products">
@@ -38,6 +43,7 @@ function Sidebar() {
         <Link to='/invoice'>
           <button><ReceiptIcon style={{margin: "1rem"}}/>Invoices</button>
         </Link>
+
 
       </div>
     </>

@@ -1,6 +1,5 @@
 import './dashboard.css'
 import React from 'react';
-import CRM from '../Pages/crm/CRM';
 
 
 function Dashboard() {
@@ -10,8 +9,6 @@ function Dashboard() {
       <div id="demo-modal" className="modal">
         <div className="modal__content">
           <a href="#" className="modal__close">&times;</a>
-          <CRM />
-          <CRM />
        </div>
 
       </div>

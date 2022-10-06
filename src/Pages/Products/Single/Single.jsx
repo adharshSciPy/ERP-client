@@ -44,7 +44,6 @@ function Single() {
           <p>About this item</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore assumenda suscipit tempora reiciendis, nesciunt sunt, dignissimos autem consectetur nulla dolor impedit inventore error accusantium ipsam possimus, cumque sint! Voluptates facilis molestiae consequuntur dolore doloribus ratione in commodi eligendi quas autem cumque quo distinctio natus, tenetur eaque consequatur ullam error provident, consectetur reprehenderit itaque eum a. Commodi architecto accusantium fuga itaque iste facere neque nihil nesciunt, tenetur asperiores, mollitia odio provident</p>
         </div>
-
       </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ function Employee() {
     <div className='dashboardcontainer'>
       <div className="emp-item1">
         <div className="emp-header">
-          <h1>Employee</h1>
+          <h2>Employee</h2>
           <Link to="/employee/addEmployee"><button className='emp-button'>Add Employee</button></Link>
         </div>
       </div>

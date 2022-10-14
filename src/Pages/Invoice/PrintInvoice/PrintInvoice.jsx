@@ -1,29 +1,33 @@
-import React, {useRef} from 'react'
+import React, { useRef } from 'react'
 import { useReactToPrint } from 'react-to-print';
 import './invoice.css'
+import dayjs from 'dayjs'
 
 function Invoice() {
+  const formatDate = dayjs(new Date()).format('DD/MM/YYYY')
+  console.log(formatDate)
 
   const componentRef = useRef();
-    const handlePrint = useReactToPrint({
-      content: () => componentRef.current,
-    });
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   return (
     <>
       <div className="dashboardcontainer">
         <div className="invoice-item1" >
-          <div className="invoice-container"  ref={componentRef}>
+          <div className="invoice-container" ref={componentRef}>
 
 
             <div className="invoice-header">
               <div className="invoice-logo">
                 <img src="https://i.pinimg.com/736x/71/b3/e4/71b3e4159892bb319292ab3b76900930.jpg" alt="" />
               </div>
-              <h1>Invoice</h1>
+             <h3>Invoice</h3>
             </div>
 
             <div className="invoice-body">
-              <p><span>Date :</span>18-04-2000</p>
+              <p>Date : {formatDate}</p>
               <div className="invoice-address">
                 <div className="from">
                   <p><span>Billed From :</span> </p>
@@ -33,10 +37,11 @@ function Invoice() {
                 </div>
 
                 <div className="to">
-                  <p><span>Billed To :</span> </p>
-                  <p>Lorem Ipsmsdfd</p>
+                <p><span>Billed To :</span> </p>
+                <p>Lorem Ipsmsdfd</p>
                   <p>123 place st, City dsfsdf</p>
                   <p>emasdfdsfil@gmail.com</p>
+      
                 </div>
               </div>
 
@@ -102,7 +107,7 @@ function Invoice() {
               </div>
             </div>
           </div>
-        <button className='invoice-btn' onClick={handlePrint}>Print this out!</button>
+          <button className='invoice-btn' onClick={handlePrint}>Print this out!</button>
         </div>
       </div>
     </>

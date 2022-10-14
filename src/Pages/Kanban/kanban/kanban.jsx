@@ -56,7 +56,7 @@ const Kanban = () => {
         <div className="dashboardcontainer">
             <div className="kanban-item1">
                 <div className="kanban-header">
-                    <h1>Lead Generation</h1>
+                    <h2>Lead Generation</h2>
                 </div>
                 <DragDropContext onDragEnd={onDragEnd}>
                     <div className="kanban">
@@ -98,7 +98,7 @@ const Kanban = () => {
                                                 </div>
 
                                                 <div className="add_todo_btn">
-                                                    <input type="submit" />
+                                                     <input type="submit" />
                                                 </div>
                                               </div>
                                                 

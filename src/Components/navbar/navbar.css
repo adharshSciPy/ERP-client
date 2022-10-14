@@ -3,15 +3,16 @@
     width: calc(100% - 20px);
     height: calc(10vh - 20px);
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.116);
+    /* background-color: rgba(255, 255, 255, 0.116); */
+    background-color: #fff;
     backdrop-filter: blur(20px);
     position: fixed;
-    background-color: blur(8px);
+    /* background-color: blur(8px); */
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 1000;
+    z-index: 100;
 }
 
 h1{

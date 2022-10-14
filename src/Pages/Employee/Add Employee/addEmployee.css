@@ -15,9 +15,11 @@
     box-sizing: border-box;
 }
 .add-emp-details{
-    padding: 3rem;
+    padding: 2rem;
 }
-
+.add-emp-details h5{
+    padding: 0 3rem;
+}
 .emp-inputs{
     display: flex;
     align-items: center;

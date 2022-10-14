@@ -8,6 +8,7 @@
     "@inovua/reactdatagrid-community": "^4.21.0",
     "@inovua/reactdatagrid-enterprise": "^4.21.0",
     "@mui/icons-material": "^5.10.6",
+    "@mui/lab": "^5.0.0-alpha.102",
     "@mui/material": "^5.10.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",

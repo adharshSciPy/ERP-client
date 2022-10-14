@@ -1,7 +1,7 @@
 // Header.js
 import './sidebar.css';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import BadgeIcon from '@mui/icons-material/Badge';
@@ -9,42 +9,83 @@ import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantity
 import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import Person from '@mui/icons-material/Person';
+import StoreIcon from '@mui/icons-material/Store';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import {useState} from 'react';
+
+
 
 
 function Sidebar() {
+
+  const sidebarData = [
+    {
+      title: 'Dashboard',
+      icon: <DashboardIcon />,
+      link: '/'
+    },
+    {
+      title: "CRM",
+      icon: <Diversity3Icon />,
+      link: '/crm'
+    },
+    {
+      title: "HRM",
+      icon: <Person />,
+      link: '/hrm'
+    },
+    {
+      title: 'Employee',
+      icon: <BadgeIcon/>,
+      link: '/employee'
+    },
+
+    {
+      title: 'Products',
+      icon: <ProductionQuantityLimitsIcon/>,
+      link: '/products'
+    },
+
+    {
+      title: 'Invoices',
+      icon: <ReceiptIcon/>,
+      link: '/invoice'
+    },
+
+    {
+      title: 'Kanban',
+      icon: <PlaylistAddCheckIcon/>,
+      link: '/kanban'
+    },
+
+    {
+      title: 'Vendor',
+      icon: <StoreIcon/>,
+      link: '/vendor'
+    },
+
+    {
+      title: 'Profile',
+      icon: <ManageAccountsIcon/>,
+      link: '/profile'
+    },
+
+  ]
+
   return (
     <>
-      <div className="container">
-        <Link to='/'>
-          <button><DashboardIcon style={{margin: "1rem"}}/>Dashboard </button>
-        </Link>
+      <div className="sidebar-container">
 
-        <Link to='/crm'>
-          <button><Diversity3Icon style={{margin: "1rem"}}/>CRM</button>
-        </Link>
-
-        <Link to='/hrm'>
-          <button><Person style={{margin: "1rem"}}/>HRM</button>
-        </Link>
-
-        <Link to='/employee'>
-          <button><BadgeIcon style={{margin: "1rem"}}/>Employee</button>
-        </Link>
-
-        <Link to="products">
-          <button><ProductionQuantityLimitsIcon style={{margin: "1rem"}}/>Products</button>
-        </Link>
-
-        <Link to='/kanban'>
-          <button><PlaylistAddCheckIcon style={{margin: "1rem"}}/>Kanban</button>
-        </Link>
-
-
-        <Link to='/invoice'>
-          <button><ReceiptIcon style={{margin: "1rem"}}/>Invoices</button>
-        </Link>
-
-
+      {
+        sidebarData.map((val, key)=> {
+          return(
+    
+            <NavLink to={val.link} id="sideBar_items" className={({isActive}) => isActive ? "btn-active" : ""}>
+            <div style={{margin: '1rem'}}>{val.icon}</div>{val.title}
+            </NavLink>
+          )
+        })
+      }
       </div>
     </>
   )

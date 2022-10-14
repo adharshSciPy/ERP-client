@@ -20,7 +20,7 @@ function AddEmployee() {
     },
   })
 
-  
+
   const images = files.map((file) => (
     <div key={file.name}>
       <img className='emp-selected-image' src={file.preview} style={{ width: "200px" }} alt={file.name} />
@@ -35,6 +35,39 @@ function AddEmployee() {
         </div>
 
         <div className="add-emp-details">
+          <div className="row">
+            <div className="col emp-inputs">
+              <label for="pImage">Employee Image</label>
+              <div className="emp-image-upload" {...getRootProps()}>
+                {files.length === 0 && <img src="https://t3.ftcdn.net/jpg/02/18/21/86/360_F_218218632_jF6XAkcrlBjv1mAg9Ow0UBMLBaJrhygH.jpg" style={{ height: '100%', widht: '100%' }} />}
+                {images}
+              </div>
+            </div>
+
+            <div className="col emp-inputs">
+              <label for="employeeId">Employee ID</label>
+              <input type="text" name='employeeId' value="vh061" />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col">
+            </div>
+            <div className="col emp-inputs">
+              <label htmlFor="phone">Phone</label>
+              <input type="text" name='phone' id='phone' placeholder='81-390-31990' />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col">
+          </div>
+
+            <div className="col emp-inputs">
+              <label htmlFor="dateOfBirth">Date of Birth</label>
+              <input type="date" />
+            </div>
+          </div>
 
           <div className="row">
             <div className="col emp-inputs">
@@ -43,87 +76,15 @@ function AddEmployee() {
             </div>
 
             <div className="col emp-inputs">
-              <label for="pImage">Employee Image</label>
-              <div className="emp-image-upload" {...getRootProps()}>
-                {files.length === 0 && <img src="https://t3.ftcdn.net/jpg/02/18/21/86/360_F_218218632_jF6XAkcrlBjv1mAg9Ow0UBMLBaJrhygH.jpg" style={{height: '100%', widht: '100%'}} />}
-                {images}
-              </div>
+              <label htmlFor="email">Email</label>
+              <input type="text" name='email' id='email' placeholder='john@gmail.com' />
             </div>
           </div>
 
           <div className="row">
             <div className="col emp-inputs">
               <label for="employeeName">Last Name</label>
-              <input type="text" name='lastName' placeholder='John' />
-            </div>
-
-            <div className="col emp-inputs">
-             
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col emp-inputs">
-              <label for="employeeId">Employee ID</label>
-              <input type="text" name='employeeId' value="vh061" />
-            </div>
-
-            <div className="col emp-inputs">
-             
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col emp-inputs">
-            <label htmlFor="phone">Phone</label>
-            <input type="text" name='phone' id='phone' placeholder='81-390-31990' />
-            </div>
-
-            <div className="col emp-inputs">
-            <label htmlFor="email">Email</label>
-            <input type="text" name='email' id='email' placeholder='john@gmail.com' />
-            </div>
-          </div>
-
-          {/* <div className="row">
-            <div className="col">
-              <label htmlFor="primary Address">Primary Address</label>
-              <div>
-                <input type="text" name="houseNo" id='houseNo' placeholder='House No, Building Name, Area' />
-              </div>
-              <div>
-                <input type="text" name="city" id='city' placeholder='City' />
-              </div>
-              <div>
-                <input type="text" name="state" id='state' placeholder='State' />
-              </div>
-              <div>
-                <input type="text" name="pincode" id='pincode' placeholder='695523' />
-              </div>
-            </div>
-
-
-            <div className="col">
-              <label htmlFor="primary Address">Other Address</label>
-              <div>
-                <input type="text" name="houseNo" id='houseNo' placeholder='House No, Building Name, Area' />
-              </div>
-              <div>
-                <input type="text" name="city" id='city' placeholder='City' />
-              </div>
-              <div>
-                <input type="text" name="state" id='state' placeholder='State' />
-              </div>
-              <div>
-                <input type="text" name="pincode" id='pincode' placeholder='695523' />
-              </div>
-            </div>
-          </div> */}
-
-          <div className="row">
-            <div className="col emp-inputs">
-              <label htmlFor="dateOfBirth">Date of Birth</label>
-              <input type="date" />
+              <input type="text" name='lastName' placeholder='doe' />
             </div>
 
             <div className="col emp-inputs">

@@ -12,6 +12,8 @@ import Person from '@mui/icons-material/Person';
 import StoreIcon from '@mui/icons-material/Store';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import {useState} from 'react';
+import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
+import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
 
 
 
@@ -35,13 +37,18 @@ function Sidebar() {
       link: '/hrm'
     },
     {
+      title: 'RFQ',
+      icon: <RequestQuoteIcon />,
+      link: '/rfq'
+    },
+    {
       title: 'Employee',
       icon: <BadgeIcon/>,
       link: '/employee'
     },
 
     {
-      title: 'Products',
+      title: 'Inventory',
       icon: <ProductionQuantityLimitsIcon/>,
       link: '/products'
     },
@@ -69,7 +76,11 @@ function Sidebar() {
       icon: <ManageAccountsIcon/>,
       link: '/profile'
     },
-
+    {
+      title: 'Attendence',
+      icon: <AssignmentTurnedInIcon />,
+      link: '/attendence'
+    }
   ]
 
   return (

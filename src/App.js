@@ -12,7 +12,7 @@ import Single from './Pages/Products/Single/Single'
 import Upload from './Pages/Products/Upload/Upload'
 import SignUp from './Pages/SignUp/SignUp';
 import InvoiceList from './Pages/Invoice/InvoiceList/InvoiceList';
-import PrintInvoice from './Pages/Invoice/PrintInvoice/PrintInvoice'; 
+import PrintInvoice from './Pages/Invoice/PrintInvoice/PrintInvoice';
 import AddInvoice from './Pages/Invoice/AddInvoice/AddInvoice';
 import Login from './Pages/Login/Login'
 import Kanban from './Pages/Kanban/kanban/kanban'
@@ -20,6 +20,9 @@ import Employee from './Pages/Employee/Employee Page/Employee'
 import AddEmployee from './Pages/Employee/Add Employee/AddEmployee'
 import Vendor from './Pages/Vendor/Vendor'
 import Profile from './Pages/Proflie/Profile'
+import Attendence from './Pages/Atttendence/Attendence';
+import RFQ from './Pages/RFQ/RFQ/RFQ';
+import AddRFQ from './Pages/RFQ/Add RFQ/AddRFQ';
 
 
 function App() {
@@ -43,7 +46,8 @@ function App() {
                 <Route path="vendor" element={<Vendor />} />
                 <Route path="kanban" element={<Kanban />} />
                 <Route path="profile" element={<Profile />} />
-                
+                <Route path="attendence" element={<Attendence />} />
+
                 <Route path="products">
                   <Route index element={<List />} />
                   <Route path=":products" element={<Single />} />
@@ -59,6 +63,11 @@ function App() {
                   <Route index element={<InvoiceList />} />
                   <Route path="addInvoice" element={<AddInvoice />} />
                   <Route path="printInvoice" element={<PrintInvoice />} />
+                </Route>
+
+                <Route path="rfq">
+                  <Route index element={<RFQ />} />
+                  <Route path='addRfq' element={<AddRFQ />} />
                 </Route>
               </Routes>
             </div>

@@ -1,4 +1,4 @@
-.addInvoice-item1{
+.addInvoice-item1 {
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     height: auto;
@@ -9,7 +9,7 @@
 
 }
 
-.addInvoice-header{
+.addInvoice-header {
     height: 3vh;
     width: auto;
     display: flex;
@@ -20,27 +20,28 @@
     margin-bottom: 2rem;
 }
 
-.addInvoice-container{
+.addInvoice-container {
     padding: 0 2rem;
 }
 
-.col label{
+.col label {
     /* display: inline-block; */
     font-weight: 500;
-    margin:0 3rem;
+    margin: 0 3rem;
 }
 
-.inv-col{
+.inv-col {
     display: flex;
     justify-content: space-between;
 }
 
-.addInvoice-table tr td{
-    padding:.1rem 1rem;
+.addInvoice-table tr td {
+    padding: .1rem 1rem;
     overflow: hidden;
     font-weight: 550;
 }
-.addInvoice-table  tr th{
+
+.addInvoice-table tr th {
     font-size: 13px;
     font-weight: 550;
     background-color: rgb(156, 151, 151);
@@ -48,7 +49,20 @@
     margin-bottom: 1.2rem;
 }
 
-.addInvoice-table tfoot tr td{
+.addInvoice-table tfoot tr td {
     font-weight: 550;
     background-color: rgb(216, 211, 211);
+}
+
+.invoice-addMore {
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 600;
+    background-color: #5469D4;
 }

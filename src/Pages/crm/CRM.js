@@ -3,7 +3,17 @@ import './crm.css';
 import { tableData } from '../../Dummy datas/datas'
 import { useState } from 'react';
 import TablePagination from '@mui/material/TablePagination';
+import SlidingPane from "react-sliding-pane";
+import "react-sliding-pane/dist/react-sliding-pane.css";
+
+
 function CRM() {
+
+  const [state, setState] = useState({
+    isPaneOpen: false,
+    isPaneOpenLeft: false,
+    id:""
+  });
 
   const [name, setName] = useState('')
   const [age, setAge] = useState('')
@@ -35,8 +45,28 @@ function CRM() {
         <div className="crm-item1">
           <div className='crm-header'>
             <h1>CRM</h1>
+            <button onClick={() => setState({ isPaneOpen: true })}>
+        Click me to open right pane!
+      </button>
+
             <a href="#demo-modal"><button type="submit" className='crm-button'>Add User</button></a>
           </div> 
+          <SlidingPane
+        className="some-custom-class"
+        overlayClassName="some-custom-overlay-class"
+        isOpen={state.isPaneOpen}
+        width = "500px"
+        title="Hey, it is optional pane title.  I can be React component too."
+        subtitle="Optional subtitle."
+        onRequestClose={() => {
+          // triggered on "<" on left top click or on outside click
+          setState({ isPaneOpen: false });
+        }}
+      >
+        <div> {state.id} </div>
+        
+        
+      </SlidingPane>
 
 
            {/* modal */}
@@ -121,7 +151,7 @@ function CRM() {
             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             .map((value) => {
               return (
-                <tr>
+                <tr onClick={() => setState({ isPaneOpen: true, id: value.id })}>
                   <td>{value.id}</td>
                   <td>{value.name}</td>
                   <td>{value.age}</td>

@@ -10,10 +10,21 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
-
+import SlidingPane from "react-sliding-pane";
+import "react-sliding-pane/dist/react-sliding-pane.css";
 
 function CRM() {
+// sidling panel
+  const [state, setState] = useState({
+    isPaneOpen: false,
+    isPaneOpenLeft: false,
+    id:""
+  });
 
+  const [name, setName] = useState('')
+  const [age, setAge] = useState('')
+  const [gender, setGender] = useState('')
+  const [designation, setDesignation] = useState('')
 
   // contolls for pagination
   const [page, setPage] = React.useState(0);
@@ -27,6 +38,10 @@ function CRM() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(tableData)
+  }
 
   // controlls for customer image uplaod
   const [files, setFiles] = useState([])
@@ -113,6 +128,23 @@ function CRM() {
             <h1>CRM</h1>
             <a href="#demo-modal"><button type="submit" className='crm-button'>Add User</button></a>
           </div>
+
+          <SlidingPane
+        className="some-custom-class"
+        overlayClassName="some-custom-overlay-class"
+        isOpen={state.isPaneOpen}
+        width = "500px"
+        title="Hey, it is optional pane title.  I can be React component too."
+        subtitle="Optional subtitle."
+        onRequestClose={() => {
+          // triggered on "<" on left top click or on outside click
+          setState({ isPaneOpen: false });
+        }}
+      >
+        <div> {state.id} </div>
+        
+        
+      </SlidingPane>
 
 
           {/* modal */}
@@ -410,7 +442,7 @@ function CRM() {
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((value) => {
                       return (
-                        <tr>
+                        <tr onClick={() => setState({ isPaneOpen: true, id: value.id })}>
                           <td>{value.id}</td>
                           <td>{value.name}</td>
                           <td>{value.age}</td>

@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HRM from './Pages/HRM/HRM';
-import CRM from './Pages/CRM/CRM';
+import CRM from './Pages/crm/CRM';
 import Dashboard from './Pages/Dashboard/dashbord';
 import Navbar from './Components/navbar/navbar';
 import Sidebar from './Components/sidebar/sidebar';

@@ -1,0 +1,92 @@
+.addEmp-item1{
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    height: auto;
+    padding: 10px 20px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    border-radius: 10px;
+}
+
+.addEmp-header{
+    height: 3vh;
+    width: auto;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+.add-emp-details{
+    padding: 2rem;
+}
+.add-emp-details h5{
+    padding: 0 3rem;
+}
+.emp-inputs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.emp-inputs input{
+   margin-right: 2rem;
+}
+
+.emp-inputs input[type=date]{
+    width: 11rem;
+    color: #858585;
+}
+
+.emp-inputs input[type=time]{
+    width: 11rem;
+    color: #858585;
+}
+
+.add-emp-details label{
+    font-size: 13px;
+    font-weight: 390;
+    text-align: center;
+}
+
+.add-emp-details h5{
+    font-size: 15px;
+    font-weight: 550;
+    margin-top: 1rem;
+    margin-bottom: .4rem;
+}
+
+
+.add-emp-details .emp-image-upload{
+    height: 6.5rem;
+    width: 6.5rem;
+    /* clip-path: circle(50% at 50% 50%); */
+    border: 2px solid #5861FD;
+    /* border-radius: 50%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-bottom: -55px;
+    margin-left: 5rem;
+    margin-right: auto;
+  }
+  
+  .add-emp-details .emp-selected-image{
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    transform: scale(1.2);
+    transition: .3s ease-in;
+  }
+
+ .add-emp-details input[type=submit] {
+    color: #ffff;
+    width: 5rem;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #5861FD;
+    border: none;
+    float: right;
+    height: 2rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }

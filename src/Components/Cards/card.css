@@ -1,4 +1,4 @@
-.card{
+.cards{
     height: 17rem;
     width: 15rem;
     padding: .8rem;
@@ -30,7 +30,7 @@
     font-weight: 600;
 }
 
-.card-btns a:hover{
+.card-btn a:hover{
     text-decoration: underline;
 }
 .card-details p:nth-child(2){
@@ -39,19 +39,19 @@
     color: red;
 }  
 
-.card-btns{
+.card-btn{
     display: flex;
     width: 100%;
     align-items: flex-end;
     justify-content: space-between;
 }
 
-.card-btns a{
+.card-btn a{
     font-size: 14px;
     color: #2740bd;
 }
 
-.card-btns button{
+.card-btn button{
     background-color: #1f1d1de8;
     border-radius: 3px;
     color: white;
@@ -61,4 +61,8 @@
     border: none;
     height: 1.5rem;
     width: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .2rem;
 }

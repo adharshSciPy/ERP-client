@@ -10,7 +10,7 @@ function List() {
         <div className='grid-container'>
           <div className="list-item1">
               <div className="list-header">
-                <h1>Products</h1>
+                <h2>Products</h2>
                 <Link to="/products/upload"><button type="submit" className='list-button'>Add Product</button></Link>
               </div>
              <div className='list-container'>

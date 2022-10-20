@@ -14,25 +14,24 @@
 .sidebar{
   margin-top: 10vh;
   width: 15vw;
-  height: 90vh;
+  height: auto;
   position: fixed;
-  
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .body{
   margin-top: 10vh;
-  width: 100vw;
+  width: 100%;
   margin-left: 15vw;
 }
 
 /* styling for forms */
- input, textarea, select {
+ input, textarea, select{
   margin-bottom: 20px;
     font-size: 14px;
-    line-height: 25px;
+    line-height: 20px;
     padding: 4px 16px;
-    min-height: 25px;
+    min-height: 1.2rem;
     border: unset;
     border-radius: 4px;
     outline-color: rgb(84 105 212 / 0.5);
@@ -46,16 +45,28 @@
                 rgba(0, 0, 0, 0) 0px 0px 0px 0px;
 }
 
+button{
+    width: 100%;
+    border-width: 0;
+    height: 40px;   
+    background-color: white;
+    cursor: pointer;
+    /* border-bottom: .1px solid rgb(241, 240, 240); */
+    font-weight: 500;
+    color: rgb(95, 94, 94); 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
 
 input::placeholder{
   font-size: 14px;
 }
 
 label {
-  /* padding: 2px 12px 2px 0; */
-  display: inline-block;
-  font-weight: 500;
-  margin-bottom: .3rem;
+  font-size: 17px;
 }
 
 input[type=submit] {
@@ -74,8 +85,15 @@ input[type=submit] {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .col{
   flex: 1;
+}
+
+@media (max-width: 800px) {
+  .col {
+    flex: 100%;
+  }
 }

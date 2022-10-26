@@ -23,7 +23,8 @@ function Vendor() {
             <h2>Vendor</h2>
           </div>
 
-          <div className="add-vendor-details">
+
+          <div style={{ margin: '2rem 0 0 2rem' }}>
             <label>Primary Contact</label>
             <div className="row">
               <div className="col vendor-inputs">
@@ -37,54 +38,58 @@ function Vendor() {
                 </select>
               </div>
               <div className="col">
+
               </div>
             </div>
+          </div>
+          <div className="add-vendor-details">
+            <div className="vendor-input-feilds">
+              <div className="row">
+                <div className="col vendor-inputs">
+                  <label htmlFor="firstName">First Name</label>
+                  <input type="text" placeholder='eg:- John' />
+                </div>
 
-            <div className="row">
-              <div className="col vendor-inputs">
-                <label htmlFor="firstName">First Name</label>
-                <input type="text" placeholder='eg:- John' />
+                <div className="col vendor-inputs">
+                  <label for="firstName">Last Name</label>
+                  <input type="text" placeholder='eg:- doe' />
+                </div>
               </div>
 
-              <div className="col vendor-inputs">
-                <label for="firstName">Last Name</label>
-                <input type="text" placeholder='eg:- doe' />
-              </div>
-            </div>
+              <div className="row">
+                <div className="col vendor-inputs">
+                  <label htmlFor="companyName">Company Name</label>
+                  <input type="text" placeholder='eg:- company Name' />
+                </div>
 
-            <div className="row">
-              <div className="col vendor-inputs">
-                <label htmlFor="companyName">CompanyName</label>
-                <input type="text" placeholder='eg:- company Name' />
-              </div>
-
-              <div className="col vendor-inputs">
-                <label for="vendorDisplayName">Vendor Display Name</label>
-                <input type="text" placeholder='eg:- vendor name' />
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col vendor-inputs">
-                <label htmlFor="vendorEmail">Vendor Email</label>
-                <input type="text" placeholder='john@gmail.com' />
-              </div>
-              <div className="col vendor-inputs">
-                <label htmlFor="vendorEmail">Vendor Mobile</label>
-                <input type="text" placeholder='81-290-2192' />
-              </div>
-            </div>
-
-            <div className="row">
-
-              <div className="col vendor-inputs">
-                <label htmlFor="phone">Phone</label>
-                <input type="text" placeholder='0472-2883283' />
+                <div className="col vendor-inputs">
+                  <label for="vendorDisplayName">Vendor Name</label>
+                  <input type="text" placeholder='eg:- vendor name' />
+                </div>
               </div>
 
-              <div className="col vendor-inputs">
-                <label htmlFor="website">Website</label>
-                <input type="text" placeholder='www.logTech.com' />
+              <div className="row">
+                <div className="col vendor-inputs">
+                  <label htmlFor="vendorEmail">Vendor Email</label>
+                  <input type="text" placeholder='john@gmail.com' />
+                </div>
+                <div className="col vendor-inputs">
+                  <label htmlFor="vendorEmail">Vendor Mobile</label>
+                  <input type="text" placeholder='81-290-2192' />
+                </div>
+              </div>
+
+              <div className="row">
+
+                <div className="col vendor-inputs">
+                  <label htmlFor="phone">Phone</label>
+                  <input type="text" placeholder='0472-2883283' />
+                </div>
+
+                <div className="col vendor-inputs">
+                  <label htmlFor="website">Website</label>
+                  <input type="text" placeholder='www.logTech.com' />
+                </div>
               </div>
             </div>
           </div>
@@ -340,7 +345,7 @@ function Vendor() {
                     <tbody>
                       <tr>
                         <td>
-                          <select style={{width: '100%'}}>
+                          <select style={{ width: '100%' }}>
                             <option value="Mr.">Mr.</option>
                             <option value="Mr.">Mrs.</option>
                             <option value="Mr.">Ms.</option>

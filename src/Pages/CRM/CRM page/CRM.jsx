@@ -1,5 +1,5 @@
 import React from 'react'
-import './employee.css'
+import './crm.css'
 import { Link as ReactLink } from 'react-router-dom';
 import { tableData } from '../../../Dummy datas/datas'
 import TablePagination from '@mui/material/TablePagination';
@@ -41,7 +41,7 @@ function Employee() {
       <div className="emp-item1">
         <div className="emp-header">
           <h2>Employee</h2>
-          <ReactLink to="/employee/addEmployee"><button className='emp-button'>Add Employee</button></ReactLink>
+          <ReactLink to="/crm/addCrm"><button className='emp-button'>Add Customer</button></ReactLink>
         </div>
 
         {/* side drawer */}
@@ -99,8 +99,8 @@ function Employee() {
                     .map((value) => {
                       return (
                         <tr onClick={() => setState({ isPaneOpen: true, id: value.id, name: value.name, age: value.age, gender: value.gender, designation: value.designation })}>
-                          <th><Checkbox size="small" style={{ zIndex: 2 }} /></th>
-                          <td><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>{value.id} <img src={value.img} /></div></td>
+                          <td><Checkbox size="small" style={{ zIndex: 2 }} /></td>
+                          <td><div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>{value.id} <img src={value.img} /></div></td>
                           <td>{value.name}</td>
                           <td>{value.age}</td>
                           <td>{value.gender}</td>

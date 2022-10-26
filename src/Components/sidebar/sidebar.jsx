@@ -14,6 +14,7 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import {useState} from 'react';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
+import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
 
 
 
@@ -77,10 +78,15 @@ function Sidebar() {
       link: '/profile'
     },
     {
-      title: 'Attendence',
-      icon: <AssignmentTurnedInIcon />,
-      link: '/attendence'
+      title: 'POS',
+      icon: <PointOfSaleIcon/>,
+      link: '/pos'
     }
+    // {
+    //   title: 'Attendence',
+    //   icon: <AssignmentTurnedInIcon />,
+    //   link: '/attendence'
+    // }
   ]
 
   return (

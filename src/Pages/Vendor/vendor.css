@@ -16,7 +16,11 @@
 }
 
 .add-vendor-details{
-    padding: 3rem;
+    padding: 0 2rem 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .tab-inputs{
@@ -25,13 +29,20 @@
 
 .vendor-inputs{
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
+    max-width: 50%;
 }
+
+.vendor-inputs input::placeholder{
+    font-size: 13px;
+    color: rgb(160, 155, 155);
+  }
 
 .vendor-inputs label{
     font-weight: 300;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
+    font-size: 13px;
 }
 
 .address-head{
@@ -41,5 +52,10 @@
 }
 
 .tab-inputs .vendor-inputs select{
-    width: 13rem;
+    width: 14rem;
 }
+
+.tab-inputs .vendor-inputs input{
+    width: 12rem;
+}
+

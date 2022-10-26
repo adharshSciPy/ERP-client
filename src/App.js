@@ -3,7 +3,8 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HRM from './Pages/HRM/HRM';
-import CRM from './Pages/CRM/CRM';
+import CRM from './Pages/CRM/CRM page/CRM'
+import AddCrm from './Pages/CRM/Add CRM/AddCrm'
 import Dashboard from './Pages/Dashboard/dashbord';
 import Navbar from './Components/navbar/navbar';
 import Sidebar from './Components/sidebar/sidebar';
@@ -23,6 +24,7 @@ import Profile from './Pages/Proflie/Profile'
 import Attendence from './Pages/Atttendence/Attendence';
 import RFQ from './Pages/RFQ/RFQ/RFQ';
 import AddRFQ from './Pages/RFQ/Add RFQ/AddRFQ';
+import POS from './Pages/POS/Pos'
 
 
 function App() {
@@ -47,11 +49,17 @@ function App() {
                 <Route path="kanban" element={<Kanban />} />
                 <Route path="profile" element={<Profile />} />
                 <Route path="attendence" element={<Attendence />} />
+                <Route path="pos" element={<POS />} />
 
                 <Route path="products">
                   <Route index element={<List />} />
                   <Route path=":products" element={<Single />} />
                   <Route path="upload" element={<Upload />} />
+                </Route>
+
+                <Route path="crm">
+                  <Route index element={<CRM />} />
+                  <Route path="addCrm" element={<AddCrm />} />
                 </Route>
 
                 <Route path="employee">

@@ -39,12 +39,12 @@ function AddEmployee() {
             <div className="col emp-inputs">
               <label for="pImage">Employee Image</label>
               <div className="emp-image-upload" {...getRootProps()}>
-                {files.length === 0 && <img src="https://t3.ftcdn.net/jpg/02/18/21/86/360_F_218218632_jF6XAkcrlBjv1mAg9Ow0UBMLBaJrhygH.jpg" style={{ height: '100%', widht: '100%' }} />}
+                {files.length === 0 && <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpCKq1XnPYYDaUIlwlsvmLPZ-9-rdK28RToA&usqp=CAU" style={{ height: '100%', widht: '100%' }} />}
                 {images}
               </div>
             </div>
 
-            <div className="col emp-inputs">
+            <div className="col emp-inputs" style={{marginTop: '2rem'}}>
               <label for="employeeId">Employee ID</label>
               <input type="text" name='employeeId' value="vh061" />
             </div>
@@ -61,7 +61,7 @@ function AddEmployee() {
 
           <div className="row">
             <div className="col">
-          </div>
+            </div>
 
             <div className="col emp-inputs">
               <label htmlFor="dateOfBirth">Date of Birth</label>

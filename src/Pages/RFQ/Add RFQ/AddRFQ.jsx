@@ -1,7 +1,6 @@
 import React from 'react'
 import './addRfq.css'
 import dayjs from 'dayjs'
-import Checkbox from '@mui/material/Checkbox';
 
 function AddRFQ() {
     const date = Date.now()

@@ -11,7 +11,7 @@
 .addEmp-header{
     height: 3vh;
     width: auto;
-    padding: 2rem;
+    padding: 2rem 0  0 2rem;
     box-sizing: border-box;
 }
 .add-emp-details{

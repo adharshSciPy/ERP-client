@@ -11,6 +11,9 @@ import ViewCarouselIcon from '@mui/icons-material/ViewCarousel';
 import { Link } from 'react-router-dom'
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
+import EditIcon from '@mui/icons-material/Edit';
+import Person2Icon from '@mui/icons-material/Person2';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 function Employee() {
   // sidling panel
@@ -45,30 +48,101 @@ function Employee() {
         </div>
 
         {/* side drawer */}
-        <SlidingPane style={{ zIndex: 10 }}
-          className="some-custom-class"
-          overlayClassName="some-custom-overlay-class"
-          isOpen={state.isPaneOpen}
-          width="500px"
-          title="Employee Quick Action Pannel"
-          subtitle="Employee Details"
-          onRequestClose={() => {
-            // triggered on "<" on left top click or on outside click
-            setState({ isPaneOpen: false });
-          }}
-        >
-          <div> {state.id} </div>
+        <SlidingPane
+            className="some-custom-class"
+            overlayClassName="some-custom-overlay-class"
+            isOpen={state.isPaneOpen}
+            width="500px"
+            title="Customer details"
+            subtitle="you can manage your customer details"
+            onRequestClose={() => {
+              // triggered on "<" on left top click or on outside click
+              setState({ isPaneOpen: false });
+            }}
+          >
+            <div className='profileContainer'  >
+              <div className='profilepicCont'>
+                <div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk8HpDrYnaODtnghczDBs0f4Nalq_chptAbA&usqp=CAU" alt="" className='profilepic' />
+                </div>
+              </div>
+              <div className='profileName'>
+                {state.name}
+              </div>
+              <div className='profileLabel'>
+          <h5 style={{ fontSize: '12px', color:"blue" }}>Primary Email</h5> 
+              </div>
+              <div className='profileLabel'>
+          <h5 style={{ fontSize: '12px', color:"blue" }}>Primary phone</h5> 
+              </div>
+         <div className="profileMenu" style={{ display:"flex"}}>
 
-          <div>Name: {state.name} </div>
+                <div className='pIcon'>
+                  <Person2Icon></Person2Icon>
 
-          <div>Designation: {state.designation} </div>
+                </div>
+                <div className='pIcon'>
+                  <EditIcon></EditIcon>
 
-          <div>Age:  {state.age} </div>
+                </div>
+                <div className='pIcon'>
+                  <MoreHorizIcon></MoreHorizIcon>
 
-          <div>Gender: {state.gender} </div>
+                </div>
 
+              </div>
+            </div>
 
-        </SlidingPane>
+            <div className='detailsContainer'>
+              <div className="detailsTitleContainer">
+                <h3>Details</h3>
+                <div className="detailsItem">
+
+                  items
+
+                </div>
+              </div>
+              <div className="detailsTitleContainer">
+                <h3>Label</h3>
+                <div className="detailsItem">
+
+                  items
+
+                </div>
+              </div>
+              <div className="detailsTitleContainer">
+                <h3>Task and Remainder</h3>
+                <div className="detailsItem">
+
+                  items
+
+                </div>
+
+              </div>
+
+              <div className="detailsTitleContainer">
+                <h3>Workflow</h3>
+                <div className="detailsItem">
+
+                  items
+
+                </div>
+
+              </div>
+              <div className="detailsTitleContainer">
+                <h3>Activity</h3>
+                <div className="detailsItem">
+
+                  items
+
+                </div>
+          
+              </div>
+
+            </div>
+        
+        
+          </SlidingPane>
 
         <div className="emp-sub-header">
           <IconButton onClick={() => { setList(true) }}>

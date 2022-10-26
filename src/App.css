@@ -169,6 +169,11 @@ table td {
     display: block;
     font-size: .7rem;
     text-align: center;
+    cursor: pointer;
+  }
+
+  table td:hover{
+    background-color: #e0e1fa;
   }
   
   table td::before {

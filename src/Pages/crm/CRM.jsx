@@ -12,13 +12,20 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
+import { width } from '@mui/system';
+
+import EditIcon from '@mui/icons-material/Edit';
+import Person2Icon from '@mui/icons-material/Person2';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+
 
 function CRM() {
 // sidling panel
   const [state, setState] = useState({
     isPaneOpen: false,
     isPaneOpenLeft: false,
-    id:""
+    id:"",
+    name:""
   });
 
   const [name, setName] = useState('')
@@ -134,14 +141,93 @@ function CRM() {
         overlayClassName="some-custom-overlay-class"
         isOpen={state.isPaneOpen}
         width = "500px"
-        title="Hey, it is optional pane title.  I can be React component too."
-        subtitle="Optional subtitle."
+        title="Customer details"
+        subtitle="you can manage your customer details"
         onRequestClose={() => {
           // triggered on "<" on left top click or on outside click
           setState({ isPaneOpen: false });
         }}
       >
-        <div> {state.id} </div>
+        <div className='profileContainer'  >
+          <div className='profilepicCont'>
+            <div> 
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk8HpDrYnaODtnghczDBs0f4Nalq_chptAbA&usqp=CAU" alt="" className='profilepic' />
+         </div> 
+         </div> 
+         <div className='profileName'>
+           {state.name} 
+         </div>
+         <div className='profileLabel'>
+          <h5 style={{ fontSize: '12px', color:"blue" }}>Primary Email</h5> 
+         </div>
+         <div className='profileLabel'>
+          <h5 style={{ fontSize: '12px', color:"blue" }}>Primary phone</h5> 
+         </div>
+         <div className="profileMenu" style={{ display:"flex"}}>
+
+          <div className='pIcon'>
+            <Person2Icon></Person2Icon>
+
+          </div>
+          <div className='pIcon'>
+            <EditIcon></EditIcon>
+
+          </div>
+          <div className='pIcon'>
+            <MoreHorizIcon></MoreHorizIcon>
+
+          </div>
+
+         </div>
+        </div>
+
+        <div className='detailsContainer'>
+         <div className="detailsTitleContainer">
+          <h3>Details</h3>
+          <div className="detailsItem">
+
+                 items
+
+          </div>
+         </div>
+         <div className="detailsTitleContainer">
+          <h3>Label</h3>
+          <div className="detailsItem">
+
+                 items
+
+          </div>
+         </div>
+         <div className="detailsTitleContainer">
+          <h3>Task and Remainder</h3>
+          <div className="detailsItem">
+
+                 items
+
+          </div>
+          
+         </div>
+
+         <div className="detailsTitleContainer">
+          <h3>Workflow</h3>
+          <div className="detailsItem">
+
+                 items
+
+          </div>
+          
+         </div>
+         <div className="detailsTitleContainer">
+          <h3>Activity</h3>
+          <div className="detailsItem">
+
+                 items
+
+          </div>
+          
+         </div>
+
+        </div>
         
         
       </SlidingPane>
@@ -442,7 +528,7 @@ function CRM() {
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((value) => {
                       return (
-                        <tr onClick={() => setState({ isPaneOpen: true, id: value.id })}>
+                        <tr onClick={() => setState({ isPaneOpen: true, id: value.id , name : value.name})}>
                           <td>{value.id}</td>
                           <td>{value.name}</td>
                           <td>{value.age}</td>

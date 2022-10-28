@@ -13,7 +13,7 @@ function SignUp() {
                 <div className="formbg-outer">
                 <div className="formbg">
                     <div className="formbg-inner padding-horizontal--48">
-                    <span className="padding-bottom-15">Sign up to create your free account</span>
+                    <span className="padding-bottom-15">Create your free account</span>
                         <div className="field">
                         <label for="email">Email</label>
                         <input type="email" name="email" />

@@ -1,4 +1,4 @@
-import './vendor.css'
+import './addVendor.css'
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
@@ -7,7 +7,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 
 
-function Vendor() {
+function AddVendor() {
 
   // tabs controllers
   const [value, setValue] = React.useState('1');
@@ -370,4 +370,4 @@ function Vendor() {
   )
 }
 
-export default Vendor
+export default AddVendor

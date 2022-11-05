@@ -7,35 +7,13 @@ import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { useRef } from 'react';
-import { useEffect } from 'react';
+
 
 
 function Pos() {
-
-    // to handle fullscreen
     const handle = useFullScreenHandle();
     let fullScreen = handle.active
     console.log(fullScreen)
-
-    // to genreate random gradient css color
-    function genRGB() {
-        const r = Math.floor(Math.random() * 255);
-        const g = Math.floor(Math.random() * 255);
-        const b = Math.floor(Math.random() * 255);
-        return `rgb(${r},${g},${b})`;
-    };
-
-    function returnGradient() {
-        let deg = Math.floor(Math.random() * 360);
-        return `linear-gradient(${deg}deg,${genRGB()},${genRGB()},${genRGB()})`
-    };
-
-    const ref = useRef();
-
-    let gradient = []
-
-
     const loop = [
         {
             id: 1,
@@ -100,16 +78,6 @@ function Pos() {
 
     ]
 
-    loop.map((i, val) => {
-        // returnGradient()
-        return (
-            i.gradient = returnGradient()
-        )
-    })
-
-
-    console.log(loop)
-
     // card products
     const products = [
         {
@@ -120,7 +88,7 @@ function Pos() {
         {
             img: "https://img.freepik.com/free-photo/chicken-skewers-with-slices-sweet-peppers-dill_2829-18813.jpg?t=st=1666942353~exp=1666942953~hmac=43c5cb8e41387f400c82395c834950ea9078bbe406c924f43a01d0ab8ff87c9c",
             price: '200',
-            name: 'skewers'
+            name: 'Chicken skewers'
         },
         {
             img: 'https://img.freepik.com/premium-photo/indian-dhal-spicy-curry-bowl-spices-herbs-rustic-black-wooden-background_2829-4750.jpg',
@@ -195,7 +163,7 @@ function Pos() {
         {
             img: "https://img.freepik.com/free-photo/chicken-skewers-with-slices-sweet-peppers-dill_2829-18813.jpg?t=st=1666942353~exp=1666942953~hmac=43c5cb8e41387f400c82395c834950ea9078bbe406c924f43a01d0ab8ff87c9c",
             price: '200',
-            name: 'skewers'
+            name: 'Chicken skewers'
         },
         {
             img: 'https://img.freepik.com/premium-photo/indian-dhal-spicy-curry-bowl-spices-herbs-rustic-black-wooden-background_2829-4750.jpg',
@@ -211,23 +179,24 @@ function Pos() {
 
     // carousel controller
     const settings = {
+        dots: false,
         infinite: false,
         speed: 100,
         slidesToShow: 6,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         swipeToSlide: true,
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 6,
+                    slidesToShow: 8,
                     slidesToScroll: 4,
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 4,
                     slidesToScroll: 2
                 }
             },
@@ -258,109 +227,53 @@ function Pos() {
                         </div>
                     </div>
 
-                    {/* pos body */}
-
-                    <div className="pos-container">
-                        <div className="pos-body">
-                            <div style={{ width: '100%' }}>
-                                <h4>Categories</h4>
-                                <Slider {...settings}>
-                                    {
-                                        loop.map((i, val) => {
-                                            return (
-                                                <div className="pos-category-cards" key={i}>
-                                                    <div><img src={i.img} alt="" /></div>
-                                                    <div className="category-main-item">
-                                                        {i.name}
-                                                    </div>
-                                                    <div className="category-sub-item" >
-                                                        {i.amount}
-                                                    </div>
-                                                </div>
-                                            )
-                                        })
-                                    }
-                                </Slider>
-                            </div>
-                            <h4 style={{ marginBottom: '1rem' }}>Special Menu for you</h4>
-                            <div className="pos-cards">
-                                {
-                                    products.map((i, val) => {
-                                        return (
-                                            <div className="pos-cards-items" key={val}>
-                                                <img src={i.img} alt="" />
-                                                <div className="pos-cards-details">
-                                                    <p>{i.name}</p>
-                                                    <p>&#8377; {i.price}</p>
-                                                </div>
+                    <div className="pos-body">
+                        <h5>Categories</h5>
+                        <Slider {...settings}>
+                            {
+                                loop.map((i, val) => {
+                                    return (
+                                        <div className="pos-category-cards" key={val} style={{backgroundColor: 'red'}}>
+                                            <div><img src={i.img} alt="" /></div>
+                                            <div className="category-main-item">
+                                                {i.name}
                                             </div>
-                                        )
-                                    })
+                                            <div className="category-sub-item">
+                                                {i.amount}
+                                            </div>
+                                        </div>
 
-                                }
-                            </div>
-                        </div>
-                        <div className="pos-sidebar">
-                            <h4>Order Details</h4>
+                                    )
+                                })
+                            }
+                        </Slider>
+                        <h4>Special Menu for you</h4>
+                        <div className="pos-cards">
+                            {
+                                products.map((i, val) => {
+                                    return (
+                                        <div className="pos-cards-items" key={val}>
+                                            <img src={i.img} alt="" />
+                                            <div className="pos-cards-details">
+                                                <p>{i.name}</p>
+                                                <p>&#8377; {i.price}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })
 
-                            <div className="pos-order-details">
-                                <div className="personal-details">
-                                    <p>Recipent : Yoland Tamara</p>
-                                    <p>Mon, Oct 16, 2022, 12:00</p>
-                                    <p>#0820220010</p>
-                                </div>
-
-                                <div className="item-details">
-                                    <div className="item-details-row">
-                                        <p>Double Chesse Burger</p>
-                                        <p>&#8377; 390</p>
-                                    </div>
-                                    <div className="item-details-row">
-                                        <p>Basmati rice</p>
-                                        <p>&#8377; 390</p>
-                                    </div>
-                                    <div className="item-details-row">
-                                        <p>Feta bake</p>
-                                        <p>&#8377; 390</p>
-                                    </div>
-                                    <div className="item-details-row">
-                                        <p>Roast chicken</p>
-                                        <p>&#8377; 390</p>
-                                    </div>
-
-
-                                    <div className="item-addons">
-                                        <p>Extra Pickels</p>
-                                        <p>Extra Pickels</p>
-                                        <p>Extra Pickelss sdd</p>
-                                        <p>Extra Pickels</p>
-                                    </div>
-
-                                    <div className="item-total-row">
-                                        <p>Subtotal</p>
-                                        <p>&#8377; 390</p>
-                                    </div>
-
-                                      <div className="item-total-row">
-                                        <p>Tax(10%)</p>
-                                        <p>&#8377; 390</p>
-                                    </div>
-                                    <div className="item-total-row">
-                                        <p>Discount(8%)</p>
-                                        <p>&#8377; 390</p>
-                                    </div>
-
-                                    <div className="pos-item-total">
-                                        <p>Total</p>
-                                        <p>&#8377; 1902/-</p>
-                                    </div>
-                                </div>
-                            </div>
+                            }
                         </div>
                     </div>
+
+                    <div className="pos-sidebar">
+                        dsfsdfsdf
+                    </div>
+
                 </div>
-            </FullScreen >
-        </div >
+            </FullScreen>
+        </div>
+
     )
 }
 

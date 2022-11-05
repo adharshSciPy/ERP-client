@@ -24,7 +24,7 @@ import TimelineOppositeContent, {
   timelineOppositeContentClasses,
 } from '@mui/lab/TimelineOppositeContent';
 
-function Employee() {
+function CRM() {
   // sidling panel
   const [state, setState] = useState({
     isPaneOpen: false,
@@ -53,7 +53,7 @@ function Employee() {
     <div className='dashboardcontainer'>
       <div className="emp-item1">
         <div className="emp-header">
-          <h2>Employee</h2>
+          <h3>Customer Managment</h3>
           <ReactLink to="/crm/addCrm"><button className='emp-button'>Add Customer</button></ReactLink>
         </div>
 
@@ -302,4 +302,4 @@ function Employee() {
   )
 }
 
-export default Employee
+export default CRM

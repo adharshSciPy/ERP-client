@@ -26,11 +26,13 @@ import AddRFQ from './Pages/RFQ/Add RFQ/AddRFQ';
 import POS from './Pages/POS/Pos';
 import Vendor from './Pages/Vendor/Vendor Page/Vendor'
 import AddVendor from './Pages/Vendor/Add Vendor/AddVendor';
+import PosCopy from './Pages/POS copy/Pos'
+import Calender from './Pages/Calender/Calender'
 
 
 function App() {
   return (
-    <>
+
       <div className='container'>
         <BrowserRouter>
           <Routes>
@@ -39,6 +41,7 @@ function App() {
           </Routes>
           <Navbar />
           <div className='body-container'>
+        
             <div className='sidebar'><Sidebar /></div>
 
             <div className="body">
@@ -50,6 +53,8 @@ function App() {
                 <Route path="profile" element={<Profile />} />
                 <Route path="attendence" element={<Attendence />} />
                 <Route path="pos" element={<POS />} />
+                <Route path="posCopy" element={<PosCopy/>} />
+                <Route path="calender" element={<Calender/>} />
 
                 <Route path="products">
                   <Route index element={<List />} />
@@ -87,7 +92,7 @@ function App() {
           </div>
         </BrowserRouter>
       </div>
-    </>
+
 
 
 

@@ -10,7 +10,7 @@ const CrmSideModal = () => {
   });
  
   return (
-    <div>
+    <div style={{zIndex: 2}}>
       <button onClick={() => setState({ isPaneOpen: true })}>
         Click me to open right pane!
       </button>

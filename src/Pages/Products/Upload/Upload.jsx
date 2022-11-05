@@ -44,59 +44,59 @@ function Upload() {
         <div className="upload-item1">
           <div className="upload-container">
 
-        
-          <div className="upload-image">
-            <div {...getRootProps()}>
-              <input {...getInputProps()} />
-              <div className="image-border">
-                <img src={upload} alt="" />
-                <p>Drop Your images here..</p>
-                {files.length !== 0 &&
-                  <p>{files.length} Images added</p>}
+
+            <div className="upload-image">
+              <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                <div className="image-border">
+                  <img src={upload} alt="" />
+                  <p>Drop Your images here..</p>
+                  {files.length !== 0 &&
+                    <p>{files.length} Image added</p>}
+                </div>
               </div>
+
+
+              {/* container to display selected images */}
+              {files.length !== 0 &&
+                <div className='select-images-container'>
+                  {images}
+                </div>}
+
             </div>
-          
 
-            {/* container to display selected images */}
-            {files.length !== 0 &&
-              <div className='select-images-container'>
-                {images}
-              </div>}
+            <div className="upload-details">
+              <form action="">
+                <div>
+                  <label for="pname">Product Name</label>
+                </div>
+                <div className="field" style={{ width: "20rem" }}>
+                  <input type="text" id="pname" name="productname" value={name} onChange={(e) => setName(e.target.value)} placeholder="Product Name.." />
+                </div>
+                <div>
+                  <label for="price">Price (&#8377;)</label>
+                </div>
+                <div className=" field" style={{ width: "20rem" }}>
+                  <input type="text" id="price" name="productprice" placeholder="Product Price.." value={price} onChange={(e) => setPrice(e.target.value)} />
+                </div>
+                <div>
+                  <label for="mrp">MRP  (&#8377;)</label>
+                </div>
+                <div className=" field" style={{ width: "20rem" }}>
+                  <input type="text" id="mrp" name="mrp" placeholder="Product MRP.." value={mrp} onChange={(e) => setMrp(e.target.value)} />
+                </div>
+                <div>
+                  <label for="description">Description</label>
+                </div>
+                <div className="field">
+                  <textarea id="description" name="subject" placeholder="Write something.." style={{ height: "100px", width: "100%" }} value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+                  {/* <input type="submit" onClick={handleSubmit} value="Submit" style={{marginTop: '10px'}} /> */}
+                </div>
+                <div className="row">
+                  <input type="submit" onClick={handleSubmit} value="Submit" style={{ marginTop: '10px' }} />
+                </div>
 
-          </div>
-
-          <div className="upload-details">
-            <form action="">
-              <div>
-                <label for="pname">Product Name</label>
-              </div>
-              <div className="field" style={{ width: "25rem" }}>
-                <input type="text" id="pname" name="productname" value={name} onChange={(e) => setName(e.target.value)} placeholder="Product Name.." />
-              </div>
-              <div>
-                <label for="price">Price (&#8377;)</label>
-              </div>
-              <div className=" field" style={{ width: "25rem" }}>
-                <input type="text" id="price" name="productprice" placeholder="Product Price.." value={price} onChange={(e) => setPrice(e.target.value)} />
-              </div>
-              <div>
-                <label for="mrp">MRP  (&#8377;)</label>
-              </div>
-              <div className=" field" style={{ width: "25rem" }}>
-                <input type="text" id="mrp" name="mrp" placeholder="Product MRP.." value={mrp} onChange={(e) => setMrp(e.target.value)} />
-              </div>
-              <div>
-                <label for="description">Description</label>
-              </div>
-              <div className="field">
-                <textarea id="description" name="subject" placeholder="Write something.." style={{ height: "100px", width: "100%" }} value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
-                {/* <input type="submit" onClick={handleSubmit} value="Submit" style={{marginTop: '10px'}} /> */}
-              </div>
-              <div className="row">
-                <input type="submit" onClick={handleSubmit} value="Submit" style={{ marginTop: '10px' }} />
-              </div>
-
-            </form>
+              </form>
             </div>
           </div>
         </div>

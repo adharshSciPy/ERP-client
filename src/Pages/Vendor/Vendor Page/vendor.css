@@ -30,3 +30,12 @@
     justify-content: center;
     border-radius: 2px;
   }
+
+  .data-grid-head{
+    height: 75vh;
+    overflow: scroll;   
+  }
+
+  .data-grid-head::-webkit-scrollbar{
+    display: none;
+  }

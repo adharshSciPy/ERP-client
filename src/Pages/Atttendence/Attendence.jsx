@@ -9,39 +9,24 @@ function Attendence() {
 
     const date = Date.now()
     const formatDate = dayjs(date).format('DD-MMM-YYYY')
-    const dayNo = getDay(date)
+  
+    console.log(date)      
     let day
-    switch (dayNo) {
-        case 0:
-            day = 'Sunday'
-            break;
-        case 1:
-            day = 'Monday'
-            break;
-        case 2:
-            day = 'Tuesday'
-            break;
-        case 3:
-            day = 'Wednesday'
-            break;
-        case 4:
-            day = 'Thursday'
-            break;
-        case 5:
-            day = 'Friday'
-            break;
-        case 6:
-            day = 'Saturday'
-            break;
-        default:
-            day = 'Invalid Day'
-    }
+    let toDay
     const s = startOfMonth(date)
     const e = endOfMonth(date)
     let dates
     const month = getMonth(date)
     const year = getYear(date)
     const numDays = differenceInDays(e, s) + 1
+    let toDate
+    let toMonth 
+    let toYear
+
+   
+
+    console.log(toDay)
+   
 
 
 
@@ -76,8 +61,8 @@ function Attendence() {
                 </div>
 
                 <div className="attendence-body">
-                    <div className="attendence-table" style={{ height: '70vh', overflowY: 'scroll' }}>
-                        <table>
+                    {/* <div className="attendence-table" style={{ height: '70vh', overflowY: 'scroll' }}> */}
+                        {/* <table>
                             <tr style={{
                                 position: 'sticky', top: '0', zIndex: '10'
                             }}>
@@ -89,31 +74,71 @@ function Attendence() {
                                 <th style={{ color: 'purple' }}>CA</th>
                                 <th style={{ color: 'blue' }}>OT</th>
                                 <th style={{ color: 'orange' }}>HO</th>
-                            </tr>
+                            </tr> */}
+                         <div className="calender-grid">
+                        {
+                            Array.from({ length: numDays }).map((key, index) => {
+                                dates = (index + 1)
+                                // const row1 = ((date)/2)
 
-                            {
-                                Array.from({ length: numDays }).map((key, index) => {
-                                    dates = (index + 1)
-                                    // const row1 = ((date)/2)
+                                const tdDate = dayjs(`${month + 1}/${dates}/${year}`).format('DD-MMM-YYYY')
+                                toDay = dayjs(`${month + 1}/${dates}/${year}`).format('DD-MMM-YYYY')
+                                console.log(day)
+                                toDate = dayjs(`${month + 1}/${dates}/${year}`).format('DD')
+                                toMonth = dayjs(`${month + 1}/${dates}/${year}`).format('MM')
+                                toYear = dayjs(`${month + 1}/${dates}/${year}`).format('YYY')
+                                const dayNo = getDay(new Date(toYear, toMonth, toDate)) 
+                                switch (dayNo) {
+                                   case 0:
+                                       day = 'Sunday'
+                                       break;
+                                   case 1:
+                                       day = 'Monday'
+                                       break;
+                                   case 2:
+                                       day = 'Tuesday'
+                                       break;
+                                   case 3:
+                                       day = 'Wednesday'
+                                       break;
+                                   case 4:
+                                       day = 'Thursday'
+                                       break;
+                                   case 5:
+                                       day = 'Friday'
+                                       break;
+                                   case 6:
+                                       day = 'Saturday'
+                                       break;
+                                   default:
+                                       day = 'Invalid Day'
+                               }
+                           
+                               console.log(day)
+                 
+                                return (
 
-                                    const tdDate = dayjs(`${month + 1}/${dates}/${year}`).format('DD-MMM-YYYY')
-                                    return (
-                                        <tr>
-                                            <td colSpan='2'>{tdDate}</td>
-                                            <td> <Checkbox size="small" /></td>
-                                            <td> <Checkbox size="small" /></td>
-                                            <td> <Checkbox size="small" /></td>
-                                            <td> <Checkbox size="small" /></td>
-                                            <td> <Checkbox size="small" /></td>
-                                            <td> <Checkbox size="small" /></td>
-                                            <td> <Checkbox size="small" /></td>
-                                        </tr>
-                                    )
-                                })
-                            }
-                        </table>
-                        <input type="submit" value='save' style={{marginTop: '10px', position: 'sticky'}} />
-                    </div>
+                              
+                                        <div className="calender-grid-items">{tdDate}{day}</div>
+                               
+
+                                    // <tr>
+                                    //     <td colSpan='2'>{tdDate}</td>
+                                    //     <td> <Checkbox size="small" /></td>
+                                    //     <td> <Checkbox size="small" /></td>
+                                    //     <td> <Checkbox size="small" /></td>
+                                    //     <td> <Checkbox size="small" /></td>
+                                    //     <td> <Checkbox size="small" /></td>
+                                    //     <td> <Checkbox size="small" /></td>
+                                    //     <td> <Checkbox size="small" /></td>
+                                    // </tr>
+                                )
+                            })
+                        }
+                        {/* </table> */}
+                        </div>
+                        <input type="submit" value='save' style={{ marginTop: '10px', position: 'sticky' }} />
+                    {/* </div> */}
                 </div>
             </div>
         </div >

@@ -50,3 +50,21 @@
 .attendence-table::-webkit-scrollbar {
     width: 20px;
 }
+
+.calender-grid{
+    display: grid;
+    grid-template-columns:  auto auto auto auto auto auto;
+    width: 100%;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, auto);
+}
+
+.calender-grid-items{
+    height: 3rem;
+    width: 7rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+}

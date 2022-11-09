@@ -100,7 +100,7 @@ function Employee() {
                       return (
                         <tr onClick={() => setState({ isPaneOpen: true, id: value.id, name: value.name, age: value.age, gender: value.gender, designation: value.designation })}>
                           <th><Checkbox size="small" style={{ zIndex: 2 }} /></th>
-                          <td><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>{value.id} <img src={value.img} /></div></td>
+                          <td><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>{value.id} <img src={value.img} alt="employee" /></div></td>
                           <td>{value.name}</td>
                           <td>{value.age}</td>
                           <td>{value.gender}</td>

@@ -22,11 +22,11 @@
 
 .pro-sec1{
     margin-top: 2rem;
-    width: 50%;
-    /* background-color: aqua; */
+    width: 55%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    border-bottom: .2px solid #6e6b6b3a;
 }
 
 .pro-sec1 img{
@@ -35,20 +35,132 @@
     margin-right: 2rem;
 }
 
+.pro-sec1-details{
+    display: flex;
+    height: 10rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pro-sec1-details p:nth-child(1){
+    font-size: 22px;
+    color: rgb(82, 80, 80);
+}
+
+.pro-sec1-details p:nth-child(2){
+    font-size: 13px;
+    color: #5860fd;
+}
+
 .pro-sec1-action-btns{
     display: flex;
 }
 
 .pro-sec1-action-btns button{
     background-color: #fff;
-    color: rgb(110, 108, 108);
+    color: rgb(53, 52, 52);
     padding: 0 1rem;
-    border: .2px solid #5861FD;
-    margin-right: 2px;
+    border: .2px solid #5860fd;
     height: 29px;
+    font-size: 13px;
 }
 
 .pro-sec1-action-btns button:hover{
+    border: .2px solid #5861FD;
+    background-color: #5860fd28;
+}
+
+.pro-sec1-action-btns2{
+    display: flex;
+}
+
+
+.pro-sec1-action-btns2 button{
+    background-color: #fff;
+    color: rgb(122, 121, 121);
+    padding: 0 1rem;
+    margin-right: 1rem;
+    border: none;
+    height: 29px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.pro-sec1-action-btns2 .pro-sec-active{
+    color: #5860fd;
+    border-bottom: 1px solid #5860fd;
+    transition: .2s ease-in-out;
+}
+
+
+/* prfoile section 2 */
+.pro-sec2{
+    margin-top: 2rem;
+    width: 60%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 
 }
 
+.pro-sec2-left{
+    flex: 1;
+    padding: 0 1rem;
+}
+
+
+.pro-sec2-right{
+    flex: 1;
+    padding: 0 1rem;
+}
+
+.pro-light-heading{
+    font-size: 10px;
+    color: #5860fd;
+    margin-bottom: .5rem;
+    /* border-bottom: .2px solid rgba(168, 165, 165, 0.445); */
+}
+
+.pro-sec2-work{
+    margin-bottom: 2rem;
+}
+
+.pro-sec2-work p:nth-child(1){
+    font-size: 15px;
+    color: rgb(61, 60, 60);
+}
+
+.pro-sec2-work p:nth-child(2){
+    font-size: 12px;
+    color: #5860fd;
+}
+
+.pro-sec2-skills p{
+    font-size: 14px;
+    color: rgb(41, 40, 40);
+}
+
+
+.pro-sec2-contact-info{
+    max-width: 120%;
+    /* background-color: #5860fd; */
+}
+
+.pro-sec2-labels{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    max-width: 100%;
+    margin-bottom: .3rem;
+}
+
+.pro-sec2-labels p:nth-child(1){
+    font-size: 12px;
+    color: rgb(41, 40, 40);
+}
+
+
+.pro-sec2-labels p:nth-child(2){
+    font-size: 13px;
+    color: rgb(41, 40, 40);
+}

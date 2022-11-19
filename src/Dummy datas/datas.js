@@ -181,6 +181,5 @@ export const productList = [
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     price: 1500
   },
-
 ]
 

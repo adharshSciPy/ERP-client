@@ -1,12 +1,17 @@
 .pos-item1 {
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    min-height: 100vh;
+    max-height: 100vh;
     width: 100%;
     grid-column-start: 1;
     grid-column-end: 5;
     border-radius: 10px;
     margin-bottom: 5rem;
+    overflow: scroll;
+}
+
+.pos-item1::-webkit-scrollbar {
+    display: none;
 }
 
 .pos-header {
@@ -29,7 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%
+    border-radius: 50%;
 }
 
 .pos-category-cards {
@@ -94,6 +99,7 @@
 }
 
 .pos-cards-items {
+    position: relative;
     cursor: pointer;
     height: auto;
     max-width: 100%;
@@ -101,6 +107,16 @@
     height: 12rem;
     /* background-color: #5861FD; */
     box-shadow: rgba(81, 127, 158, 0.35) 0px 5px 15px;
+
+}
+
+.popOver {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10rem;
+    width: 10rem;
+    background-color: red;
 }
 
 .pos-cards-items img {
@@ -111,19 +127,40 @@
 
 .pos-cards-details {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .5rem;
 }
 
-.pos-cards-details p:nth-child(1) {
-    font-size: 13px;
+.pos-cards-details-left p:nth-child(1) {
+    font-size: 12px;
     color: #252525;
 }
 
-.pos-cards-details p:nth-child(2) {
-    font-size: 11.5px;
+.pos-cards-details-left p:nth-child(2) {
+    font-size: 10px;
     color: #474646;
+}
+
+/* 
+.pos-cards-details-right{
+  
+} */
+
+.pos-cards-details-right button {
+    font-weight: 700;
+    font-size: 13px;
+    color: #5861FD;
+    border: 1px solid #5861FD;
+    transition: .1s ease-in;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+}
+
+.pos-cards-details-right button:hover {
+    background-color: #5861FD;
+    color: #fff;
 }
 
 .pos-sidebar {
@@ -132,7 +169,7 @@
     /* background-color: #474fe77a; */
     border: 2px solid #5860fd91;
     /* border-left: 2px solid #5860fd91; */
-    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px; */
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
     padding: 1rem;
     margin-bottom: 2rem;
 
@@ -161,38 +198,61 @@
     color: #474646;
 }
 
-.item-details{
+.largeCard {
+    height: 15rem;
+    width: 15rem;
+}
+
+.item-details {
     padding: 2rem 0;
     box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.199);
 }
 
-.item-details-row{
+.item-details-row {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    overflow-x: hidden;
 }
 
-.item-details-row p:nth-child(1){
+.item-details-row p:nth-child(1) {
     font-size: 12px;
     color: #252525;
     max-width: 7rem;
+    min-width: 6rem;
+    /* background-color: #5861FD; */
 }
 
-.item-details-row p:nth-child(2){
+.item-details-row p:nth-child(2) {
+    font-size: 10px;
+    /* background-color: #5861FD; */
+    text-align: center;
+    color: #000000;
+    font-weight: 550;
+    max-width: 2rem;
+    min-width: 1rem;
+    /* background-color: orange; */
+}
+
+.item-details-row p:nth-child(3) {
     font-size: 13px;
     color: #000000;
-    font-weight: 600;
+    font-weight: 550;
+    max-width: 4rem;
+    min-width: 3rem;
+    /* background-color: green; */
+    text-align: end;
 }
 
-.item-addons{
+.item-addons {
     display: flex;
     flex-wrap: wrap;
     margin-top: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #33333525;
+    /* border-bottom: 1px solid #33333525; */
 }
 
-.item-addons p{
+.item-addons p {
     background-color: #5860fd3b;
     font-size: 12px;
     max-width: 10rem;
@@ -201,33 +261,142 @@
     padding: 0 .2rem;
 }
 
-.item-total-row{
+.item-total-row {
     display: flex;
     justify-content: space-between;
     margin-top: .5rem;
 }
 
-.item-total-row p:nth-child(1){
+.item-total-row p:nth-child(1) {
     font-size: 12px;
     color: #262627f5;
 }
 
-.item-total-row p:nth-child(2){
+.item-total-row p:nth-child(2) {
     font-size: 12px;
     color: #0f0f0f;
 }
 
-.pos-item-total{
+.pos-item-total {
     display: flex;
     justify-content: space-between;
 }
 
-.pos-item-total p{
+.pos-item-total p {
     font-size: 14px;
     font-weight: 600;
     color: #000000;
     margin-top: 2rem;
 }
+
+
+/* pos modal */
+.pos_modal_container {
+    position: fixed;
+    z-index: 1;
+    padding-top: 150px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: .2s ease-in-out;
+
+}
+
+.pos_modal_container_none{
+    display: none;
+}
+
+.pos_modal {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 15px;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+.pos_modal_img img {
+    height: 100%;
+    width: 100%;
+}
+
+.pos_modal_details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pos_modal_details p:nth-child(1) {
+    font-size: 14px;
+    font-weight: 500;
+    color: #252525;
+}
+
+.pos_modal_details p:nth-child(2) {
+    font-size: 13px;
+    color: #fd0707;
+}
+
+.pos_modal_actions {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: .7rem;
+    /* background-color: #5861FD; */
+}
+
+.pos_modal_actions select {
+    font-size: 12px;
+    width: 7.6rem;
+}
+
+.pos_modal_actions_counter {
+    min-width: 6.5rem;
+    display: flex;
+    background-color: rgb(235, 232, 232);
+    border-radius: 3rem;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid #5861FD; */
+}
+
+.pos_modal_actions_counter button {
+    height: 1.6rem;
+    width: 1.6rem;
+    background-color: #5861FD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 800;
+    border-radius: 50%;
+    padding: .2rem;
+}
+
+.pos_modal_actions_counter button:hover {
+    background-color: #fff;
+    color: #5861FD;
+    border: 1px solid #5861FD;
+    font-weight: 700;
+}
+
+.pos_modal_actions_counter p {
+    font-size: 13px;
+    color: #000000;
+}
+
+.pos_modal_actions_button button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5861FD;
+    color: #fff;
+    width: 100%;
+}
+
 
 
 @media screen and (max-width: 1028px) {

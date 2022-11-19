@@ -1,23 +1,19 @@
 import React from 'react'
 import './pos.css'
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
-import { useState } from 'react';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { useRef } from 'react';
-import { useEffect } from 'react';
-
+import { useRef, useState, useEffect } from 'react';
 
 function Pos() {
 
     // to handle fullscreen
     const handle = useFullScreenHandle();
     let fullScreen = handle.active
-    console.log(fullScreen)
-
+    // console.log(fullScreen)
     // to genreate random gradient css color
     function genRGB() {
         const r = Math.floor(Math.random() * 255);
@@ -31,7 +27,8 @@ function Pos() {
         return `linear-gradient(${deg}deg,${genRGB()},${genRGB()},${genRGB()})`
     };
 
-    const ref = useRef();
+
+
 
     let gradient = []
 
@@ -107,102 +104,118 @@ function Pos() {
         )
     })
 
-
-    console.log(loop)
-
     // card products
     const products = [
         {
+            id: 1,
             img: 'https://img.freepik.com/free-photo/trending-viral-feta-bake-pasta-recipe_2829-20321.jpg',
             price: '300',
             name: ' feta bake'
         },
         {
+            id: 2,
             img: "https://img.freepik.com/free-photo/chicken-skewers-with-slices-sweet-peppers-dill_2829-18813.jpg?t=st=1666942353~exp=1666942953~hmac=43c5cb8e41387f400c82395c834950ea9078bbe406c924f43a01d0ab8ff87c9c",
             price: '200',
             name: 'skewers'
         },
         {
+            id: 3,
             img: 'https://img.freepik.com/premium-photo/indian-dhal-spicy-curry-bowl-spices-herbs-rustic-black-wooden-background_2829-4750.jpg',
             price: '300',
             name: 'dhal spicy'
         },
         {
+            id: 4,
             img: 'https://img.freepik.com/premium-photo/american-hot-cheese-sandwich-homemade-grilled-cheese-sandwich-breakfast_2829-3521.jpg',
             price: '200',
             name: 'sandwich'
         },
         {
+            id: 5,
             img: 'https://img.freepik.com/free-photo/misal-pav-is-popular-maharashtrian-street-food-usal-sprouts-curry-topped-with-onions-tomatoes-farsan-chutney_466689-74294.jpg?w=826&t=st=1666937773~exp=1666938373~hmac=ab93599c68474c5bd147d103070f64162c48366e0a3c28da0e7b26044e916832',
             price: '500',
             name: "Misal pav"
         },
         {
+            id: 6,
             img: 'https://img.freepik.com/free-photo/indian-chicken-biryani-served-terracotta-bowl-with-yogurt-white-background-selective-focus_466689-72554.jpg?w=826&t=st=1666941826~exp=1666942426~hmac=0db3839b58b92d52920b8a495755fae631d00f2a74ba4a9008b26cc064fa0c1f',
             price: '200',
             name: 'chicken biryani'
         },
         {
+            id: 7,
             img: 'https://img.freepik.com/free-photo/group-indian-tea-time-snacks-samosa-kachori-aloo-bonda-onion-pakora-moong-vada-chilli-fritter-etc_466689-72720.jpg?w=826&t=st=1666941911~exp=1666942511~hmac=ec8dee0286c64dda531d6cc88d56b23bacd73e903710a92268f8879dd6d64bfd',
             price: '100',
             name: 'snacks'
         },
         {
+            id: 8,
             img: 'https://img.freepik.com/free-photo/cooked-plain-white-basmati-rice-steamed-rice-bowl_466689-74907.jpg?w=826&t=st=1666941955~exp=1666942555~hmac=658fc7c6618a7f17dcc89495832aab873f9441223217aa996b37a689e598eb99',
             price: '400',
             name: 'basmati rice'
         },
         {
+            id: 9,
             img: 'https://img.freepik.com/premium-photo/aloo-potol-dalna-recipe-is-traditional-sabzi-from-bengal-made-with-potato-pointed-gourd_466689-86443.jpg',
             price: '200',
             name: 'Aloo potol'
         },
         {
+            id: 10,
             img: 'https://img.freepik.com/free-photo/roast-chicken-liver-with-vegetables_2829-8399.jpg',
             price: '400',
             name: 'Roast chicken'
         },
         {
+            id: 11,
             img: "https://img.freepik.com/premium-photo/penne-pasta-tomato-sauce-with-chicken-tomatoes-wooden-table_2829-8576.jpg",
             price: '100',
             name: 'Penne pasta'
         },
         {
+            id: 12,
             img: 'https://img.freepik.com/free-photo/sausages-grill-pan-wooden-table_2829-20090.jpg',
             price: '200',
             name: 'Sausages'
         },
         {
+            id: 13,
             img: 'https://img.freepik.com/free-photo/pita-stuffed-with-chicken-peppers_2829-17827.jpg',
             price: '100',
-            name: 'Pita stuffed '
+            name: 'Pita stuffed'
         },
         {
+            id: 14,
             img: 'https://img.freepik.com/free-photo/baked-chicken-wings-asian-style-tomatoes-sauce-plate_2829-10657.jpg',
             price: '200',
             name: 'Baked chicken'
         },
         {
+            id: 15,
             img: 'https://img.freepik.com/premium-photo/tomato-rice-with-vegetables-chicken-healthy-food-healthy-lifestyle_2829-21413.jpg',
             price: '200',
             name: 'Tomato rice'
         },
         {
+            id: 16,
             img: 'https://img.freepik.com/free-photo/trending-viral-feta-bake-pasta-recipe_2829-20321.jpg',
             price: '300',
             name: ' feta bake'
         },
         {
+            id: 17,
             img: "https://img.freepik.com/free-photo/chicken-skewers-with-slices-sweet-peppers-dill_2829-18813.jpg?t=st=1666942353~exp=1666942953~hmac=43c5cb8e41387f400c82395c834950ea9078bbe406c924f43a01d0ab8ff87c9c",
             price: '200',
             name: 'skewers'
         },
         {
+            id: 18,
             img: 'https://img.freepik.com/premium-photo/indian-dhal-spicy-curry-bowl-spices-herbs-rustic-black-wooden-background_2829-4750.jpg',
             price: '300',
             name: 'dhal spicy'
         },
         {
+            id: 19,
             img: 'https://img.freepik.com/premium-photo/american-hot-cheese-sandwich-homemade-grilled-cheese-sandwich-breakfast_2829-3521.jpg',
             price: '200',
             name: 'sandwich'
@@ -240,6 +253,103 @@ function Pos() {
             }
         ]
     };
+
+    // controllers for modal and cart dds
+    const [open, setOpen] = React.useState(false);
+    const [posCount, setPosCount] = useState(1)
+    const [addons, setAddons] = useState()
+    const [cart, setCart] = useState([])
+    const [posModal, setPosModal] = useState({
+        id: '',
+        name: '',
+        img: '',
+        price: ''
+    })
+
+    let priceArr = []
+    let price
+    let subTotal = 0
+    let tax
+    let discount
+    let total
+
+    
+    const handleClose = () => {
+        setOpen(false)
+        setTimeout(() => setPosCount(1), 500)
+        setTimeout(() => setAddons(''), 500)
+    }
+
+    const modalRef = useRef();
+
+    // modal close while clicking window
+    useEffect(()=> {
+        window.onclick=(e) => {
+            console.log(e)
+            if(e.target.contains(modalRef.current)) {
+                console.log('inside ref')
+                handleClose()
+            }
+            else{
+                console.log('outside the ref')
+            }
+        }
+    },[])
+
+    let cartItems = []
+    const handleCart = (i, name, price, addons, posCount) => {
+        cartItems.push({
+            id: i,
+            name: name,
+            price: price,
+            addons: addons,
+            quantity: posCount
+        })
+        console.log(cartItems)
+        cartItems.push(...cart) //logic for saving previous values in cart
+        setCart(cartItems)
+        handleClose()
+    }
+    // let sum = 0
+    // function to find percentage
+    function percentage(num, per) {
+        return (num / 100) * per;
+    }
+
+    cart.map((i) => {
+        // quantity x rate
+        price = Number(i.price) * Number(i.quantity)
+        priceArr.push(price)
+
+        // to find subTotal
+        subTotal = priceArr.reduce((a, b) => a + b, 0)
+
+        // to find tax
+        tax = percentage(10, subTotal)
+        discount = percentage(8, subTotal)
+        console.log(tax)
+
+        // to find grand total
+        total = (subTotal + tax) - discount
+    })
+
+
+
+
+    // modal style
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 350,
+        height: 350,
+        bgcolor: 'background.paper',
+        border: '2px solid #000',
+        boxShadow: 24,
+        p: 2,
+    };
+
     return (
         <div className='dashboardcontainer'>
             <FullScreen handle={handle} >
@@ -290,32 +400,82 @@ function Pos() {
                                             <div className="pos-cards-items" key={val}>
                                                 <img src={i.img} alt="" />
                                                 <div className="pos-cards-details">
-                                                    <p>{i.name}</p>
-                                                    <p>&#8377; {i.price}</p>
+                                                    <div className="pos-cards-details-left">
+                                                        <p>{i.name}</p>
+                                                        <p>&#8377; {i.price}</p>
+                                                    </div>
+                                                    <div className="pos-cards-details-right">
+                                                        <button onClick={() => { setOpen(true); console.log(open); setPosModal({ id: i.id, name: i.name, img: i.img, price: i.price }) }}>+</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         )
                                     })
-
                                 }
+                                {/* <Modal
+                                    aria-labelledby="transition-modal-title"
+                                    aria-describedby="transition-modal-description"
+                                    open={open}
+                                    onClose={handleClose}
+                                    closeAfterTransition
+                                    BackdropComponent={Backdrop}
+                                    BackdropProps={{
+                                        timeout: 500,
+                                    }}
+                                >
+                                    <Fade in={open}>
+                                        <Box sx={style}> */}
+                                <div className={open ? 'pos_modal_container' : 'pos_modal_container_none'} ref={modalRef}>
+                                    <div className="pos_modal">
+                                        <div className="pos_modal_img">
+                                            <img src={posModal.img} alt="" />
+                                        </div>
+                                        <div className="pos_modal_details">
+                                            <p>{posModal.name}</p>
+                                            <p>	&#8377; {posModal.price}</p>
+                                        </div>
+                                        <div className="pos_modal_actions">
+                                            <select name="addons" id="addons" onChange={e => setAddons(e.target.value)}>
+                                                <option value="addons">Addons</option>
+                                                <option value="extra">Extra Pickels</option>
+                                                <option value="add salad">Add salad</option>
+                                                <option value="mionise">Mionise</option>
+                                            </select>
+
+                                            <div className="pos_modal_actions_counter">
+                                                <button onClick={() => setPosCount((posCount != 0) && (posCount != 1) ? posCount - 1 : posCount)}>-</button>
+                                                <p>{posCount}</p>
+                                                <button onClick={(() => setPosCount(posCount + 1))}>+</button>
+                                            </div>
+                                        </div>
+
+                                        <div className="pos_modal_actions_button">
+                                            <button onClick={() => handleCart(posModal.id, posModal.name, posModal.price, addons, posCount)}>Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* </Box>
+                                    </Fade>
+                                </Modal> */}
                             </div>
                         </div>
                         <div className="pos-sidebar">
+
                             <h4>Order Details</h4>
 
                             <div className="pos-order-details">
                                 <div className="personal-details">
-                                    <p>Recipent : Yoland Tamara</p>
+                                    <p>Order ID : #42JQ279A8IW</p>
                                     <p>Mon, Oct 16, 2022, 12:00</p>
                                     <p>#0820220010</p>
                                 </div>
 
                                 <div className="item-details">
-                                    <div className="item-details-row">
-                                        <p>Double Chesse Burger</p>
-                                        <p>&#8377; 390</p>
-                                    </div>
-                                    <div className="item-details-row">
+                                    {/* <div className="item-details-row">
+                                        <p>{cart.name}</p>
+                                        <p>&#8377; {cart.price}</p>
+                                    </div> */}
+                                    {/* <div className="item-details-row">
                                         <p>Basmati rice</p>
                                         <p>&#8377; 390</p>
                                     </div>
@@ -326,33 +486,48 @@ function Pos() {
                                     <div className="item-details-row">
                                         <p>Roast chicken</p>
                                         <p>&#8377; 390</p>
-                                    </div>
+                                    </div> */}
 
+                                    {
+                                        cart.map((i, val) => {
+                                            console.log(i)
+                                            return (
+                                                <div className="item-details-row">
+                                                    <p>{i.name}</p>
+                                                    <p>{i.quantity}</p>
+                                                    <p>{i.price}</p>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                    {/* {setSubTotal(sum)} */}
 
                                     <div className="item-addons">
-                                        <p>Extra Pickels</p>
-                                        <p>Extra Pickels</p>
-                                        <p>Extra Pickelss sdd</p>
-                                        <p>Extra Pickels</p>
+                                        {
+                                            cart.map((i, val) => {
+                                                return (
+                                                    <p>{i.addons}</p>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                    <div className="item-total-row">
+                                        <p>Subtotal</p>
+                                        <p>&#8377; {subTotal}</p>
                                     </div>
 
                                     <div className="item-total-row">
-                                        <p>Subtotal</p>
-                                        <p>&#8377; 390</p>
-                                    </div>
-
-                                      <div className="item-total-row">
                                         <p>Tax(10%)</p>
-                                        <p>&#8377; 390</p>
+                                        <p>&#8377; {tax}</p>
                                     </div>
                                     <div className="item-total-row">
                                         <p>Discount(8%)</p>
-                                        <p>&#8377; 390</p>
+                                        <p>&#8377; {discount}</p>
                                     </div>
 
                                     <div className="pos-item-total">
                                         <p>Total</p>
-                                        <p>&#8377; 1902/-</p>
+                                        <p>&#8377; {total}/-</p>
                                     </div>
                                 </div>
                             </div>

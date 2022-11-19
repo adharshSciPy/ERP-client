@@ -32,7 +32,6 @@ function Single() {
   return (
     <div className='dashboardcontainer'>
       <div className="product-item1">
-
         <div className="product-data">
           <div className="product-image">
             <img src={image} alt="product-images" />

@@ -25,6 +25,10 @@ function AddCrm() {
         },
     })
 
+    
+  // extra email and phone number
+  const [emailEx, setEmailEx] = useState()
+  const [phoneEx , setPhoneEx] = useState()
 
     const images = files.map((file) => (
         <div key={file.name}>

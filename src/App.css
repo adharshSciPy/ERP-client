@@ -60,8 +60,12 @@ button {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: .1px solid rgb(241, 240, 240);
+  border: .1px solid #5861FD;
+  /* box-shadow: #5E5DF0 0 10px 20px -10px; */
+  touch-action: manipulation;
+  outline: 0 solid transparent;
   cursor: pointer;
+
 }
 
 

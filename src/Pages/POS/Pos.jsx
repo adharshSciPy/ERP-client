@@ -8,9 +8,11 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useRef, useState, useEffect } from 'react';
 import StoreIcon from '@mui/icons-material/Store';
-import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
+import CategoryIcon from '@mui/icons-material/Category';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
-import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
+import SettingsSuggestIcon from '@mui/icons-material/Timeline';
+import AddProducts from './Add Products/AddProducts';
+import CollectionManage from './Collection Manger/CollectionManage'
 
 function Pos() {
 
@@ -385,6 +387,11 @@ function Pos() {
     // console.log(filteredProducts)
 
 
+    // manage sidebar
+    const [posHome, setPosHome] = useState(true)
+    const [addProduct, setAddProduct] = useState(false)
+    const [collectionManagment, setCollectionManagment] = useState(false)
+    const [purchaseHistory, setPurchaseHistory] = useState(false)
 
     // modal style
     const style = {
@@ -421,179 +428,225 @@ function Pos() {
 
                     {/* pos body */}
 
-                    <div className="pos-container">
-                        <div className="pos-body">
-                            <div className="pos-category">
-                                <div className={fullScreen ? 'small-sidebar' : 'small-sidebar-noZoom'}>
-                                    <button><StoreIcon /></button>
-                                    <button><ProductionQuantityLimitsIcon /></button>
-                                    <button><ControlPointIcon /></button>
-                                    <button><SettingsSuggestIcon /></button>
-                                
-                                </div>
-                                <h4>Categories</h4>
-                                <Slider {...settings}>
-                                    {
-                                        loop.map((i, val) => {
-                                            return (
-                                                <div className="pos-category-cards" key={i} onClick={() => handleFilter(i.name)}>
-                                                    <div><img src={i.img} alt="" /></div>
-                                                    <div className="category-main-item">
-                                                        {i.name}
-                                                    </div>
-                                                    <div className="category-sub-item" >
-                                                        {i.amount}
-                                                    </div>
-                                                </div>
-                                            )
-                                        })
-                                    }
-                                </Slider>
-                            </div>
-                            <h4 style={{ marginBottom: '1rem' }}>Special Menu for you</h4>
-                            <div className="pos-cards">
-                                {filteredProducts != ''
-                                    ?
-                                    filteredProducts.map((i, val) => {
-                                        return (
-                                            <div className="pos-cards-items" key={val}>
-                                                <img src={i.img} alt="" />
-                                                <div className="pos-cards-details">
-                                                    <div className="pos-cards-details-left">
-                                                        <p>{i.name}</p>
-                                                        <p>&#8377; {i.price}</p>
-                                                    </div>
-                                                    <div className="pos-cards-details-right">
-                                                        <button onClick={() => { setOpen(true); console.log(open); setPosModal({ id: i.id, name: i.name, img: i.img, price: i.price }) }}>+</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )
-                                    })
-                                    :
-                                    <p style={{ fontSize: '15px' }}>No Items Found!</p>
-                                }
-                                {/* <Modal
-                                    aria-labelledby="transition-modal-title"
-                                    aria-describedby="transition-modal-description"
-                                    open={open}
-                                    onClose={handleClose}
-                                    closeAfterTransition
-                                    BackdropComponent={Backdrop}
-                                    BackdropProps={{
-                                        timeout: 500,
-                                    }}
-                                >
-                                    <Fade in={open}>
-                                        <Box sx={style}> */}
-                                <div className={open ? 'pos_modal_container' : 'pos_modal_container_none'} ref={modalRef}>
-                                    <div className="pos_modal">
-                                        <div className="pos_modal_img">
-                                            <img src={posModal.img} alt="" />
-                                        </div>
-                                        <div className="pos_modal_details">
-                                            <p>{posModal.name}</p>
-                                            <p>	&#8377; {posModal.price}</p>
-                                        </div>
-                                        <div className="pos_modal_actions">
-                                            <select name="addons" id="addons" onChange={e => setAddons(e.target.value)}>
-                                                <option value="addons">Addons</option>
-                                                <option value="extra">Extra Pickels</option>
-                                                <option value="add salad">Add salad</option>
-                                                <option value="mionise">Mionise</option>
-                                            </select>
 
-                                            <div className="pos_modal_actions_counter">
-                                                <button onClick={() => setPosCount((posCount != 0) && (posCount != 1) ? posCount - 1 : posCount)}>-</button>
-                                                <p>{posCount}</p>
-                                                <button onClick={(() => setPosCount(posCount + 1))}>+</button>
-                                            </div>
-                                        </div>
-
-                                        <div className="pos_modal_actions_button">
-                                            <button onClick={() => handleCart(posModal.id, posModal.name, posModal.price, addons, posCount)}>Add To Cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* </Box>
-                                    </Fade>
-                                </Modal> */}
-                            </div>
-                        </div>
-                        <div className={fullScreen ? 'pos-sidebar' : 'pos-sidebar-noZoom'}>
-
-                            <h4>Order Details</h4>
-
-                            <div className="pos-order-details">
-                                <div className="personal-details">
-                                    <p>Order ID : #42JQ279A8IW</p>
-                                    <p>Mon, Oct 16, 2022, 12:00</p>
-                                    <p>#0820220010</p>
-                                </div>
-
-                                <div className="item-details">
-                                    {/* <div className="item-details-row">
-                                        <p>{cart.name}</p>
-                                        <p>&#8377; {cart.price}</p>
-                                    </div> */}
-                                    {/* <div className="item-details-row">
-                                        <p>Basmati rice</p>
-                                        <p>&#8377; 390</p>
-                                    </div>
-                                    <div className="item-details-row">
-                                        <p>Feta bake</p>
-                                        <p>&#8377; 390</p>
-                                    </div>
-                                    <div className="item-details-row">
-                                        <p>Roast chicken</p>
-                                        <p>&#8377; 390</p>
-                                    </div> */}
-
-                                    {
-                                        cart.map((i, val) => {
-                                            console.log(i)
-                                            return (
-                                                <div className="item-details-row">
-                                                    <p>{i.name}</p>
-                                                    <p>{i.quantity}</p>
-                                                    <p>{i.price}</p>
-                                                </div>
-                                            )
-                                        })
-                                    }
-                                    {/* {setSubTotal(sum)} */}
-
-                                    <div className="item-addons">
-                                        {
-                                            cart.map((i, val) => {
-                                                return (
-                                                    <p>{i.addons}</p>
-                                                )
-                                            })
-                                        }
-                                    </div>
-                                    <div className="item-total-row">
-                                        <p>Subtotal</p>
-                                        <p>&#8377; {subTotal}</p>
-                                    </div>
-
-                                    <div className="item-total-row">
-                                        <p>Tax(10%)</p>
-                                        <p>&#8377; {tax}</p>
-                                    </div>
-                                    <div className="item-total-row">
-                                        <p>Discount(8%)</p>
-                                        <p>&#8377; {discount}</p>
-                                    </div>
-
-                                    <div className="pos-item-total">
-                                        <p>Total</p>
-                                        <p>&#8377; {total}/-</p>
-                                    </div>
-                                </div>
-                            </div>
+                    <div className="pos-category">
+                        <div className={fullScreen ? 'small-sidebar' : 'small-sidebar-noZoom'}>
+                            <button className={posHome ? 'small-sidebar-btn-active' : 'small-sidebar-btn'} onClick={() => { setAddProduct(false); setPosHome(true); setCollectionManagment(false); setPurchaseHistory(false) }}><StoreIcon /></button>
+                            <button className={addProduct ? 'small-sidebar-btn-active' : 'small-sidebar-btn'} onClick={() => { setAddProduct(true); setPosHome(false); setCollectionManagment(false); setPurchaseHistory(false) }}><ControlPointIcon /></button>
+                            <button className={collectionManagment ? 'small-sidebar-btn-active' : 'small-sidebar-btn'} onClick={() => { setAddProduct(false); setPosHome(false); setCollectionManagment(true); setPurchaseHistory(false) }}><CategoryIcon /></button>
+                            <button className={purchaseHistory ? 'small-sidebar-btn-active' : 'small-sidebar-btn'} onClick={() => { setAddProduct(false); setPosHome(false); setCollectionManagment(false); setPurchaseHistory(true) }}><SettingsSuggestIcon /></button>
                         </div>
                     </div>
+
+
+                    {/* demo */}
+
+                    {
+                        posHome ?
+                            <>
+                                <div className="pos-container">
+                                    <div className="pos-body">
+                                        <h4>Categories</h4>
+                                        <Slider {...settings}>
+                                            {
+                                                loop.map((i, val) => {
+                                                    return (
+                                                        <div className="pos-category-cards" key={i} onClick={() => handleFilter(i.name)}>
+                                                            <div><img src={i.img} alt="" /></div>
+                                                            <div className="category-main-item">
+                                                                {i.name}
+                                                            </div>
+                                                            <div className="category-sub-item" >
+                                                                {i.amount}
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                        </Slider>
+
+                                        <h4 style={{ marginBottom: '1rem' }}>Special Menu for you</h4>
+                                        <div className="pos-cards">
+                                            {filteredProducts != ''
+                                                ?
+                                                filteredProducts.map((i, val) => {
+                                                    return (
+                                                        <div className="pos-cards-items" key={val}>
+                                                            <img src={i.img} alt="" />
+                                                            <div className="pos-cards-details">
+                                                                <div className="pos-cards-details-left">
+                                                                    <p>{i.name}</p>
+                                                                    <p>&#8377; {i.price}</p>
+                                                                </div>
+                                                                <div className="pos-cards-details-right">
+                                                                    <button onClick={() => { setOpen(true); console.log(open); setPosModal({ id: i.id, name: i.name, img: i.img, price: i.price }) }}>+</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                })
+                                                :
+                                                <p style={{ fontSize: '15px' }}>No Items Found!</p>
+                                            }
+                                            {/* <Modal
+                                            aria-labelledby="transition-modal-title"
+                                            aria-describedby="transition-modal-description"
+                                            open={open}
+                                            onClose={handleClose}
+                                            closeAfterTransition
+                                            BackdropComponent={Backdrop}
+                                            BackdropProps={{
+                                                timeout: 500,
+                                            }}
+                                        >
+                                            <Fade in={open}>
+                                                <Box sx={style}> */}
+                                            <div className={open ? 'pos_modal_container' : 'pos_modal_container_none'} ref={modalRef}>
+                                                <div className="pos_modal">
+                                                    <div className="pos_modal_img">
+                                                        <img src={posModal.img} alt="" />
+                                                    </div>
+                                                    <div className="pos_modal_details">
+                                                        <p>{posModal.name}</p>
+                                                        <p>	&#8377; {posModal.price}</p>
+                                                    </div>
+                                                    <div className="pos_modal_actions">
+                                                        <select name="addons" id="addons" onChange={e => setAddons(e.target.value)}>
+                                                            <option value="addons">Addons</option>
+                                                            <option value="extra">Extra Pickels</option>
+                                                            <option value="add salad">Add salad</option>
+                                                            <option value="mionise">Mionise</option>
+                                                        </select>
+
+                                                        <div className="pos_modal_actions_counter">
+                                                            <button onClick={() => setPosCount((posCount != 0) && (posCount != 1) ? posCount - 1 : posCount)}>-</button>
+                                                            <p>{posCount}</p>
+                                                            <button onClick={(() => setPosCount(posCount + 1))}>+</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="pos_modal_actions_button">
+                                                        <button onClick={() => handleCart(posModal.id, posModal.name, posModal.price, addons, posCount)}>Add To Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/* </Box>
+                                            </Fade>
+                                        </Modal> */}
+                                        </div>
+
+                                    </div>
+                                    <div className={fullScreen ? 'pos-sidebar' : 'pos-sidebar-noZoom'}>
+
+                                        <h4>Order Details</h4>
+
+                                        <div className="pos-order-details">
+                                            <div className="personal-details">
+                                                <p>Order ID : #42JQ279A8IW</p>
+                                                <p>Mon, Oct 16, 2022, 12:00</p>
+                                                <p>#0820220010</p>
+                                            </div>
+
+                                            <div className="item-details">
+                                                {/* <div className="item-details-row">
+                                                <p>{cart.name}</p>
+                                                <p>&#8377; {cart.price}</p>
+                                            </div> */}
+                                                {/* <div className="item-details-row">
+                                                <p>Basmati rice</p>
+                                                <p>&#8377; 390</p>
+                                            </div>
+                                            <div className="item-details-row">
+                                                <p>Feta bake</p>
+                                                <p>&#8377; 390</p>
+                                            </div>
+                                            <div className="item-details-row">
+                                                <p>Roast chicken</p>
+                                                <p>&#8377; 390</p>
+                                            </div> */}
+
+                                                {
+                                                    cart.map((i, val) => {
+                                                        console.log(i)
+                                                        return (
+                                                            <div className="item-details-row">
+                                                                <p>{i.name}</p>
+                                                                <p>{i.quantity}</p>
+                                                                <p>{i.price}</p>
+                                                            </div>
+                                                        )
+                                                    })
+                                                }
+                                                {/* {setSubTotal(sum)} */}
+
+                                                <div className="item-addons">
+                                                    {
+                                                        cart.map((i, val) => {
+                                                            return (
+                                                                <p>{i.addons}</p>
+                                                            )
+                                                        })
+                                                    }
+                                                </div>
+                                                <div className="item-total-row">
+                                                    <p>Subtotal</p>
+                                                    <p>&#8377; {subTotal}</p>
+                                                </div>
+
+                                                <div className="item-total-row">
+                                                    <p>Tax(10%)</p>
+                                                    <p>&#8377; {tax}</p>
+                                                </div>
+                                                <div className="item-total-row">
+                                                    <p>Discount(8%)</p>
+                                                    <p>&#8377; {discount}</p>
+                                                </div>
+
+                                                <div className="pos-item-total">
+                                                    <p>Total</p>
+                                                    <p>&#8377; {total}/-</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
+                            : ''
+                    }
+
+                    {
+                        addProduct ?
+                            <div className="pos-container">
+                                <div className="pos-sec-body">
+                                    <p>Add products</p>
+                                    <AddProducts />
+                                </div>
+                            </div>
+                            : ''
+                    }
+                    {
+                        collectionManagment ?
+                            <div className="pos-container">
+                                <div className="pos-sec-body">
+                                   <CollectionManage />
+                                </div>
+                            </div>
+                            : ''
+                    }
+
+                    {
+                        purchaseHistory ?
+                            <div className="pos-container">
+                                <div className="pos-sec-body">
+                                    <p>Purchase History</p>
+                                </div>
+                            </div>
+                            : ''
+                    }
+
+
+
+
                 </div>
             </FullScreen >
         </div >

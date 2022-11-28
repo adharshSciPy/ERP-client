@@ -1,0 +1,19 @@
+.pos-add-product-container{
+    height: 100%;
+    width: 100%;
+    /* background-color: crimson; */
+}
+
+.pos-add-product-sec1{
+    padding: 1rem 3rem;
+}
+
+.pos-add-product-sec1 .row {
+    display: flex;
+}
+
+.pos-add-product-sec1 .row .col{
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+}

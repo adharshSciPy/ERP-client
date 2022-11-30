@@ -1,64 +1,123 @@
-import React from 'react'
-import {useState} from 'react'
-import './login.css'
+import axios from "axios";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import CustomInput from "../../Components/CustomInput";
+// import GoogleAuth from "../../components/GoogleAuth/GoogleAuth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// import './login.css';
+// import FacebookAuth from "../../components/FacebookAuth/FacebookAuth";
 
 function Login() {
+  const navigate = useNavigate();
+  const [form, setForm] = useState({});
+  const [errors, setErrors] = useState({});
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+  //User signin
+  const onChangeHandler = (event) => {
+    setForm({
+      ...form,
+      [event.target.name]: event.target.value,
+    });
+  };
 
-    const handleSubmit = () => {
-        console.log(email, password)
-    }
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+    axios
+      .post("http://localhost:5000/user/signin", form)
+      .then((response) => {
+        const token = response.data.token;
+        // Save token to localStorage
+        localStorage.setItem("user-token", JSON.stringify(token));
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+        toast.success(`${response.data.message}`, {
+          position: toast.POSITION.BOTTOM_CENTER,
+        });
+        console.log(response);
+        setTimeout(() => {
+          window.location.reload(false);
+          navigate("/");
+        }, 1000);
+      })
+      .catch((err) => setErrors(err.response.data));
+  };
+  const informParent = (response) => {
+    const token = response.data.token;
+    // Save token to localStorage
+    localStorage.setItem("user-token", JSON.stringify(token));
+    localStorage.setItem("user", JSON.stringify(response.data.user));
+    toast.success(`${response.data.message}`, {
+      position: toast.POSITION.BOTTOM_CENTER,
+    });
+    setTimeout(() => {
+      window.location.reload(false);
+      navigate("/");
+    }, 1000);
+  };
+
   return (
-    <>
-        <div className="login-root">
-            <div className="box-root flex-flex flex-direction--column" style={{minHeight: "100vh", flexGrow: 1}}>
-            <div className="box-root padding-top--24 flex-flex flex-direction--column" style={{flexGrow: 1, zIndex: 9}}>
-                <div className="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-                <h1><a href='#'>Login</a></h1>
-                </div>
-                <div className="formbg-outer">
-                <div className="formbg">
-                    <div className="formbg-inner padding-horizontal--48">
-                    <span className="padding-bottom--15">Sign in to your account</span>
-                    <form id="stripe-login">
-                        <div className="field">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
-                        </div>
-                        <div className="field padding-bottom--24">
-                        <div className="grid--50-50">
-                            <label for="password">Password</label>
-                            <div className="reset-pass">
-                            <a href='#'>Forgot your password?</a>
-                            </div>
-                        </div>
-                        <input type="password" name="password" value={password} onChange={(e)=>setPassword(e.target.value)} />
-                        </div>
-                        <div className="field padding-bottom--24 padding-top--48 ">
-                        <input type="submit" name="submit" value="Continue" onClick={handleSubmit} />
-                        </div>
-                        <div className="field">
-                        <div className="ssolink">Don't have an account? <a href='#'>Sign up</a></div>
-                        </div>
-                    </form>
-                    </div>
-                </div>
-                <div className="footer-link padding-top--24">
-                    <span></span>
-                    <div className="listing padding-top--24 padding-bottom--24 flex-flex center-center">
-                    <span><a href='#'>© ERP</a></span>
-                    <span><a href='#'>Contact</a></span>
-                    <span><a href='#'>Privacy & terms</a></span>
-                    </div>
-                </div>
-                </div>
+    <div className="container" onSubmit={onSubmitHandler}>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />{" "}
+      <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
+        <h1>
+          Connexion <i class="fa fa-sign-in" aria-hidden="true"></i>
+        </h1>
+        <div
+          className="p-6 shadow-lg p-3 mb-5 bg-body rounded"
+          style={{ backgroundColor: "white" }}
+        >
+          <form class="form-group">
+            <CustomInput
+              label="Email"
+              placeholder="name@exemple.com"
+              type="text"
+              name="email"
+              icon="fa fa-envelope"
+              onChange={onChangeHandler}
+              errors={errors.email}
+            />
+            <CustomInput
+              label="Password"
+              placeholder="password"
+              type="password"
+              name="password"
+              icon="fa-solid fa-lock"
+              onChange={onChangeHandler}
+              errors={errors.password}
+            />
+            <button className="submit" type="submit">
+              sign in
+            </button>
+            <div class="row px-3 mb-4">
+              <div class="line"></div>
+              <small class="or text-center">Or</small>
+              <div class="line"></div>
             </div>
+
+            <div className="d-flex flex-row mb-3 justify-content-evenly social-media">
+              {/* <GoogleAuth informParent={informParent} />
+              <FacebookAuth informParent={informParent} /> */}
             </div>
+            <h6>
+              If you dont have an account yet,{" "}
+              <Link to="/signup">Creat One</Link> here!
+            </h6>
+          </form>
         </div>
-    </>
-  )
+      </div>
+    </div>
+  );
 }
 
-export default Login
+export default Login;
